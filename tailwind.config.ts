@@ -23,8 +23,8 @@ export default {
        background: "var(--background)",
       foreground: "var(--foreground)",
        primarycolor: "#0D111D",
-        primary50: "rgba(255, 255, 255, 0.1)", // White with 50% opacity
-        primary60: "rgba(255, 255, 255, 0.2)", // White with 50% opacity
+        primary50: "rgba(255, 255, 255, 0.1)", 
+        primary60: "rgba(255, 255, 255, 0.2)", 
       primary80: "rgba(255, 255, 255, 0.5)"
 },
 
