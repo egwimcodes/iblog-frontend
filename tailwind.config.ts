@@ -25,6 +25,7 @@ export default {
        primarycolor: "#0D111D",
         primary50: "rgba(255, 255, 255, 0.1)", 
         primary60: "rgba(255, 255, 255, 0.2)", 
+        primary70: "rgba(255, 255, 255, 0.5)",
       primary80: "rgba(255, 255, 255, 0.5)"
 },
 
