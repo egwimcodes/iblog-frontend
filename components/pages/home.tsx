@@ -22,7 +22,7 @@ function Home() {
     };
 
     return (
-        <main className='w-11/12 md:w-11/12 lg:w-10/12 mx-auto'>
+        <main className='w-11/12 md:w-11/12 lg:w-10/12 mx-auto mt-10'>
             <div className="hidden md:grid lg:grid-cols-3 md:grid-rows-2 gap-2 ">
                 <div
                     className="lg:col-span-2 p-4 min-h-40 md:min-h-72 lg:min-h-96 rounded-xl"
@@ -36,7 +36,7 @@ function Home() {
                 </div>
                 <div className="grid md:grid-cols-2 lg:grid-rows-2 gap-2">
                     <div
-                        className="bg-orange-500 lg:col-span-2 rounded-xl"
+                        className=" lg:col-span-2 rounded-xl"
                         style={{
                             backgroundImage: `url(${images[(currentIndex + 1) % images.length]})`,
                             backgroundRepeat: 'no-repeat',
@@ -44,7 +44,7 @@ function Home() {
                         }}
                     ></div>
                     <div
-                        className="bg-orange-500 lg:col-span-2 rounded-xl"
+                        className=" lg:col-span-2 rounded-xl"
                         style={{
                             backgroundImage: `url(${images[(currentIndex + 2) % images.length]})`,
                             backgroundRepeat: 'no-repeat',
@@ -57,7 +57,7 @@ function Home() {
             {/* Mobile version */}
             <div className="md:hidden grid grid-rows-3 gap-2 ">
                 <div
-                    className="bg-red-500 p-4 min-h-40 md:min-h-56 lg:min-h-96 rounded-xl"
+                    className=" p-4 min-h-40 md:min-h-56 lg:min-h-96 rounded-xl"
                     style={{
                         backgroundImage: `url(${images[currentIndex]})`,
                         backgroundRepeat: 'no-repeat',
@@ -67,7 +67,7 @@ function Home() {
                     Spans 2 columns
                 </div>
                 <div
-                    className="bg-red-500 p-4 min-h-40 md:min-h-56 lg:min-h-96 rounded-xl"
+                    className=" p-4 min-h-40 md:min-h-56 lg:min-h-96 rounded-xl"
                     style={{
                         backgroundImage: `url(${images[(currentIndex + 1) % images.length]})`,
                         backgroundRepeat: 'no-repeat',
@@ -77,7 +77,7 @@ function Home() {
                     Spans 2 columns
                 </div>
                 <div
-                    className="bg-red-500 p-4 min-h-40 md:min-h-56 lg:min-h-96 rounded-xl"
+                    className=" p-4 min-h-40 md:min-h-56 lg:min-h-96 rounded-xl"
                     style={{
                         backgroundImage: `url(${images[(currentIndex + 2) % images.length]})`,
                         backgroundRepeat: 'no-repeat',

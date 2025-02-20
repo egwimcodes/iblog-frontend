@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`font-poppins ${inter.className} ${poltawskiNowy.className} antialiased`}
+        className={`font-poppins dark:bg-background dark:text-foreground ${inter.className} ${poltawskiNowy.className} antialiased`}
       >
         {children}
       </body>
