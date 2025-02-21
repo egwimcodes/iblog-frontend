@@ -42,7 +42,7 @@ function Header({ currentPage }: HeaderProps) {
                             </span>
                         </Link>
 
-                        {/* Action buttons (Log in & Sign Up) */}
+                        {/* Action buttons (Log in & Sign Up) */} {/* Action buttons (Log in & Sign Up) */}
                         <div className="flex items-center md:order-2">
                             <button onClick={toggleTheme} className="mr-4 p-2 rounded-full text-gray-800 dark:text-white bg-gray-200 dark:bg-gray-700">
                                 {theme === "light" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
