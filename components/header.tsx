@@ -43,6 +43,7 @@ function Header({ currentPage }: HeaderProps) {
                         </Link>
 
                         {/* Action buttons (Log in & Sign Up) */} 
+                        {/* Action buttons (Log in & Sign Up) */} 
                         
                         
                         <div className="flex items-center md:order-2">
