@@ -22,7 +22,9 @@ export default function NavBar() {
                     </div>
                     <div className="login-signup-btn flex flex-row items-center space-x-2">
                         <TextBtn />
-                        <OutlineBtn />
+                        <div className="register-btn h-10">
+                        <OutlineBtn  label="Register"/>
+                        </div>
                     </div>
 
                     <div className="icons-avatar text-white hidden">

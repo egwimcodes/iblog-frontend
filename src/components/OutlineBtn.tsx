@@ -1,9 +1,21 @@
-export default function OutlineBtn() {
+'use client'
+import React from 'react'
+
+interface OutlineBtnProps {
+    label: string
+    onClick?: () => void
+    className?: string
+}
+
+export default function OutlineBtn({ label, onClick, className = '' }: OutlineBtnProps) {
     return (
-        <div className="max-w-contain h-10 p-[1px] rounded-full bg-gradient-to-t from-purple-600 via-pink-500 to-purple-600 overflow-hidden">
-            <div className="bg-lighterbg-light dark:bg-background-dark transition-colors duration-300 h-full rounded-[calc(3rem-20px)] flex items-center px-4">
-                <p className="text-brand font-inter font-medium">Sign Up</p>
+        <button
+            onClick={onClick}
+            className={`w-full max-w-xs h-[100%] p-[1px] rounded-full bg-gradient-to-t from-purple-600 via-pink-500 to-purple-600 overflow-hidden ${className}`}
+        >
+            <div className="bg-white dark:bg-black transition-colors duration-300 h-full w-full rounded-full flex items-center justify-center px-4">
+                <p className="text-brand font-inter font-medium text-sm">{label}</p>
             </div>
-        </div>
+        </button>
     )
 }

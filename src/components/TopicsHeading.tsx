@@ -4,10 +4,24 @@ import { IoMdAdd } from 'react-icons/io'
 
 export default function TopicsHeading() {
     const [selected, setSelected] = useState('For you')
-    const topics = ['For you', 'Following','Featured', 'Trending', 'Latest', 'Popular', 'Tech']
+    const topics = [
+        'For you',
+        'Following',
+        'Featured',
+        'Trending',
+        'Latest',
+        'Popular',
+        'Tech',
+        'Health',
+        'Finance',
+        'Education',
+        'Entertainment',
+        'Lifestyle'
+    ];
+      
 
     return (
-        <div className="w-[95dvw] md:w-[50dvw] h-14 flex items-center space-x-2">
+        <div className="w-[95dvw] md:w-[50dvw]  h-14 flex flex-row items-center space-x-2">
             <IoMdAdd className="w-8 h-8 text-gray-500 dark:text-gray-400" />
             <ul className="flex space-x-4 overflow-x-auto whitespace-nowrap w-full no-scrollbar px-2 scroll-smooth">
                 {topics.map((topic) => (
