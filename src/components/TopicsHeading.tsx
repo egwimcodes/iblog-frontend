@@ -21,7 +21,7 @@ export default function TopicsHeading() {
       
 
     return (
-        <div className="w-[95dvw] md:w-[50dvw]  h-14 flex flex-row items-center space-x-2">
+        <div className="w-[95dvw] lg:w-[45dvw] max-w-[700px]  h-14 flex flex-row items-center space-x-2">
             <IoMdAdd className="w-8 h-8 text-gray-500 dark:text-gray-400" />
             <ul className="flex space-x-4 overflow-x-auto whitespace-nowrap w-full no-scrollbar px-2 scroll-smooth">
                 {topics.map((topic) => (

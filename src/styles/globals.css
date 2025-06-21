@@ -10,3 +10,18 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;     /* Firefox */
   }
+
+  .gradient-border {
+    background: linear-gradient(to top, #7e22ce, #ec4899, #7e22ce); /* Tailwind's purple-600 → pink-500 → purple-600 */
+    padding: 2px; /* thickness of the "border" */
+    border-radius: 12px; /* optional */
+    display: inline-block;
+  }
+  
+  .inner-content {
+    background-color: white; /* or use dark background as needed */
+    border-radius: 10px; /* match inner radius for smooth edge */
+    padding: 1rem; /* your content padding */
+    height: 100%; width: 100%;
+  }
+  

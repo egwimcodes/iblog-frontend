@@ -11,17 +11,17 @@ export default function GradientImageBorder({
     backgroundImage,
 }: GradientImageBorderProps) {
     return (
-        <div className="w-[100%] lg:w-[60%] h-[100%] p-[1px] rounded-md bg-gradient-to-t from-purple-600 via-pink-500 to-purple-600 overflow-hidden">
-            <div className="relative h-full rounded-md flex items-center px-4 overflow-hidden">
-                {/* Background Image */}
+        <div className="w-full h-full rounded-md bg-gradient-to-t from-purple-600 via-pink-500 to-purple-600 p-[2px]">
+            <div className="relative w-full h-full bg-white dark:bg-black rounded-md overflow-hidden">
                 <Image
                     src={backgroundImage ?? '/images/3d-car.jpg'}
                     alt="Background"
-                    layout="fill"
-                    objectFit="cover"
-                    className="absolute inset-0 z-0"
+                    fill
+                    className="object-cover"
                 />
             </div>
         </div>
+
+
     );
 }

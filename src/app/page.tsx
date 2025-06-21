@@ -1,32 +1,82 @@
+"use client"
 import ArticleCard from '@/components/ArticleCard'
+import LeftSideBar from '@/components/LeftSideBar'
 import NavBar from '@/components/NavBar'
+import RightSideBar from '@/components/RightSideBar'
 import SearchBar from '@/components/SearchBar'
+import SkeletonCard from '@/components/SkeletonCard'
 import ThemeToggleButton from '@/components/ThemeToggle'
 import TopicsHeading from '@/components/TopicsHeading'
-
+import { useState, useEffect } from "react";
 export default function Home() {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // simulate loading time
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <div className=''>
+    <div className="min-h-screen bg-white dark:bg-black text-gray-800 dark:text-white">
       <ThemeToggleButton />
       <NavBar />
-      <main className="main flex flex-row ">
-        <div className="left-sidebar flex-1"></div>
-        <div className="container flex flex-col items-center">
-          <div className="nav-search md:hidden flex flex-row justify-center my-1 space-y-3">
+
+      <main className="flex flex-col md:flex-row max-w-screen-xl mx-auto px-4 md:px-6 lg:px-12">
+        {/* Left Sidebar */}
+        <aside className="hidden md:block w-[18vw] lg:w-[16vw] xl:w-[14vw]">
+          <LeftSideBar />
+        </aside>
+
+        {/* Main Content */}
+        <section className="flex-1 flex flex-col items-center md:px-6 mt-4">
+          {/* Mobile Search */}
+          <div className="md:hidden w-full mb-4">
             <SearchBar />
           </div>
-          <div className="topics flex flex-row justify-center my-1 space-y-3">
+
+          {/* Topics Heading */}
+          <div className="w-full mb-4">
             <TopicsHeading />
           </div>
-          <div className="article-card flex flex-col">
-            <ArticleCard />
-            
+
+          {/* Articles */}
+          <div className="w-full space-y-6">
+            {loading ? (
+              <SkeletonCard />
+            ) : (
+              <ArticleCard />
+            )}
+            {loading ? (
+              <SkeletonCard />
+            ) : (
+              <ArticleCard />
+            )}
+            {loading ? (
+              <SkeletonCard />
+            ) : (
+              <ArticleCard />
+            )}
+            {loading ? (
+              <SkeletonCard />
+            ) : (
+              <ArticleCard />
+            )}
+            {loading ? (
+              <SkeletonCard />
+            ) : (
+              <ArticleCard />
+            )}
           </div>
-        </div>
-        <div className="right-sidebar flex-1"></div>
+        </section>
+
+        {/* Right Sidebar */}
+        <aside className="hidden md:block w-[18vw] lg:w-[16vw] xl:w-[14vw]">
+          <RightSideBar />
+        </aside>
       </main>
-
-
     </div>
   )
 }
