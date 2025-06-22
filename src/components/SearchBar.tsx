@@ -4,7 +4,7 @@ import { CiSearch } from "react-icons/ci";
 export default function SearchBar() {
     return (
         <div className="w-[95dvw] md:w-[50dvw] h-12 p-[1px] rounded-full bg-gradient-to-t from-purple-600 via-pink-500 to-purple-600 overflow-hidden">
-            <div className="bg-white dark:bg-background-dark transition-colors duration-300 h-full rounded-[calc(3rem-20px)] flex items-center px-4">
+            <div className="bg-white dark:bg-background-dark transition-colors duration-500 h-full rounded-[calc(3rem-20px)] flex items-center px-4">
                 <input
                     type="text"
                     placeholder="Search..."

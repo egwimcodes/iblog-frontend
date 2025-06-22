@@ -114,7 +114,7 @@ export default function RootLayout({
           })}
         </script>
       </head>
-      <body className="antialiased min-h-dvh bg-background-light dark:bg-background-dark transition-colors duration-300">
+      <body className="antialiased min-h-dvh bg-background-light dark:bg-background-dark transition-colors duration-500 text-black">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>

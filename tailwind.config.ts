@@ -42,6 +42,9 @@ export default {
         inter: ["var(--font-inter)", "sans-serif"],
         poltawskiNowy: ["var(--font-poltawskiNowy)", "sans-serif"],
       },
+      screens: {
+        xsm: { max: "360px" }, 
+      },
     },
   },
 } satisfies Config;

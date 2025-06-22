@@ -18,7 +18,7 @@ export default function TopicsHeading() {
         'Entertainment',
         'Lifestyle'
     ];
-      
+
 
     return (
         <div className="w-[95dvw] lg:w-[45dvw] max-w-[700px]  h-14 flex flex-row items-center space-x-2">
@@ -35,7 +35,7 @@ export default function TopicsHeading() {
                         <span className="inline-block relative">
                             {topic}
                             {selected === topic && (
-                                <span className="absolute left-0 -bottom-1 h-[3px] w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all duration-300"></span>
+                                <span className="absolute left-0 -bottom-1 h-[3px] w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full transition-all duration-500"></span>
                             )}
                         </span>
                     </li>

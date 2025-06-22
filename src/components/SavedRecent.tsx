@@ -14,14 +14,14 @@ export default function SavedRecent() {
                             key={topic}
                             onClick={() => setSelected(topic)}
                             className={`cursor-pointer font-medium pb-1 ${selected === topic
-                                    ? 'text-black dark:text-white'
-                                    : 'text-gray-500 dark:text-gray-400'
+                                ? 'text-black dark:text-white'
+                                : 'text-gray-500 dark:text-gray-400'
                                 }`}
                         >
                             <span className="inline-block relative">
                                 {topic}
                                 {selected === topic && (
-                                    <span className="absolute left-0 -bottom-1 h-[3px] w-full bg-gradient-to-t from-pink-500 to-pink-300 rounded-full transition-all duration-300"></span>
+                                    <span className="absolute left-0 -bottom-1 h-[3px] w-full bg-gradient-to-t from-pink-500 to-pink-300 rounded-full transition-all duration-500"></span>
                                 )}
                             </span>
                         </li>

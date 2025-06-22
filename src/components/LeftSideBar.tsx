@@ -10,8 +10,8 @@ export default function LeftSideBar() {
     return (
         <aside className="hidden md:flex flex-col w-[18vw] lg:w-[16vw] xl:w-[14vw] max-w-[240px] px-4 md:px-2 mt-16">
             {/* Cover Section */}
-            <div className="relative flex flex-col h-[200px] w-full">
-                <div className="w-full max-h-[150px] overflow-hidden rounded-t-2xl">
+            <div className="relative flex flex-col h-[150px] w-full ">
+                <div className="w-full max-h-[150px] overflow-hidden rounded-t-2xl bg-orange-400">
                     <Image
                         src="/images/cover-bg.jpg"
                         alt="Cover"
@@ -27,7 +27,7 @@ export default function LeftSideBar() {
                 </div>
 
                 {/* Centered Avatar */}
-                <div className="absolute bottom-[-40px] left-1/2 transform -translate-x-1/2">
+                <div className="absolute top-[50px]  left-1/2 transform -translate-x-1/2">
                     <div className="w-[80px] h-[80px] rounded-full overflow-hidden border-2 border-white dark:border-black">
                         <Image
                             src="/images/user-avatar.jpg"
@@ -42,7 +42,7 @@ export default function LeftSideBar() {
             </div>
 
             {/* User Info */}
-            <div className="w-full flex flex-col items-center mt-12 space-y-1 text-center">
+            <div className="w-full flex flex-col items-center  space-y-1 text-center">
                 <h2 className="text-base font-semibold font-poppins">Ana Belly</h2>
                 <h3 className="text-sm text-gray-500 dark:text-gray-400 font-poppins truncate">
                     Financial business expert

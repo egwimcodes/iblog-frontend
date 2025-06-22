@@ -7,6 +7,7 @@ import SearchBar from '@/components/SearchBar'
 import SkeletonCard from '@/components/SkeletonCard'
 import ThemeToggleButton from '@/components/ThemeToggle'
 import TopicsHeading from '@/components/TopicsHeading'
+import { articles } from '@/lib/data'
 import { useState, useEffect } from "react";
 export default function Home() {
 
@@ -20,7 +21,7 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
   return (
-    <div className="min-h-screen bg-white dark:bg-black text-gray-800 dark:text-white">
+    <div className="min-h-screen text-gray-800 dark:text-white">
       <ThemeToggleButton />
       <NavBar />
 
@@ -31,7 +32,7 @@ export default function Home() {
         </aside>
 
         {/* Main Content */}
-        <section className="flex-1 flex flex-col items-center md:px-6 mt-4">
+        <section className="flex-1 flex flex-col items-center md:px-6 mt-4 md:mx-[1dvw]">
           {/* Mobile Search */}
           <div className="md:hidden w-full mb-4">
             <SearchBar />
@@ -44,31 +45,11 @@ export default function Home() {
 
           {/* Articles */}
           <div className="w-full space-y-6">
-            {loading ? (
-              <SkeletonCard />
-            ) : (
-              <ArticleCard />
-            )}
-            {loading ? (
-              <SkeletonCard />
-            ) : (
-              <ArticleCard />
-            )}
-            {loading ? (
-              <SkeletonCard />
-            ) : (
-              <ArticleCard />
-            )}
-            {loading ? (
-              <SkeletonCard />
-            ) : (
-              <ArticleCard />
-            )}
-            {loading ? (
-              <SkeletonCard />
-            ) : (
-              <ArticleCard />
-            )}
+            {loading
+              ? Array.from({ length: 5 }).map((_, index) => <SkeletonCard key={index} />)
+              : articles.map((article) => (
+                <ArticleCard key={article.id} data={article} />
+              ))}
           </div>
         </section>
 

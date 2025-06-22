@@ -21,7 +21,7 @@ export default function NavBar() {
                         <SearchBar />
                     </div>
                     <div className="login-signup-btn flex flex-row items-center space-x-2">
-                        <TextBtn />
+                        <TextBtn label="Login"/>
                         <div className="register-btn h-10">
                         <OutlineBtn  label="Register"/>
                         </div>
