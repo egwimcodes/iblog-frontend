@@ -1,5 +1,3 @@
-// lib/data.ts
-// data.ts
 export const articles = [
   {
     id: 1,
@@ -15,7 +13,7 @@ export const articles = [
     comments: 180,
     author: {
       name: "John Doe",
-      avatar: "/avatars/john.jpg",
+      avatar: "/images/avatar1.jpg",
       bio: "Automotive journalist and tech enthusiast.",
     },
   },
@@ -33,7 +31,7 @@ export const articles = [
     comments: 102,
     author: {
       name: "Sarah Connor",
-      avatar: "/avatars/sarah.jpg",
+      avatar: "/images/avatar1.jpg",
       bio: "Tech analyst and AI advocate.",
     },
   },
@@ -44,14 +42,14 @@ export const articles = [
     excerpt: "Work from home isn't going away — it's just getting started.",
     content:
       "The pandemic accelerated remote work adoption, but now it's a long-term shift. Companies are embracing flexible policies, and workers enjoy better work-life balance and productivity from home.",
-    image: "/images/remote-work.jpg",
+    image: "/images/avatar1.jpg",
     date: "2025-06-19",
     timeAgo: "25 mins ago",
     likes: 780,
     comments: 89,
     author: {
       name: "Marcus Lee",
-      avatar: "/avatars/marcus.jpg",
+      avatar: "/images/avatar1.jpg",
       bio: "Workplace strategist and business author.",
     },
   },
@@ -69,7 +67,7 @@ export const articles = [
     comments: 210,
     author: {
       name: "Lena Brown",
-      avatar: "/avatars/lena.jpg",
+      avatar: "/images/avatar1.jpg",
       bio: "Futurist and virtual world researcher.",
     },
   },
@@ -87,7 +85,7 @@ export const articles = [
     comments: 130,
     author: {
       name: "Nathan Green",
-      avatar: "/avatars/nathan.jpg",
+      avatar: "/images/avatar1.jpg",
       bio: "Environmental tech writer and speaker.",
     },
   },
@@ -105,13 +103,9 @@ export const articles = [
     comments: 75,
     author: {
       name: "Emily Ray",
-      avatar: "/avatars/emily.jpg",
+      avatar: "/images/avatar1.jpg",
       bio: "Lifestyle coach focused on mindful tech use.",
     },
   },
 ];
   
-  
-
-export const getArticleBySlug = (slug: string) =>
-  articles.find((article) => article.slug === slug);
