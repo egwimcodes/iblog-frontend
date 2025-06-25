@@ -17,17 +17,20 @@ export default function WhoToFollow() {
                         {/* Author Info */}
                         <div className="p-[1px] w-full rounded-xl bg-gradient-to-t from-purple-600 via-pink-500 to-purple-600 overflow-hidden" key={index}>
                             <div className="bg-background-light dark:bg-background-dark transition-colors duration-500 p-2 rounded-[calc(0.75rem-1px)]">
-                                <div className="flex items-center justify-between">
-                                    <div className="avatar w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
+                                <div className="flex items-center justify-between ">
+                                    <div className="flex-shrink-0 mr-1">
+
+                                    <div className="avatar w-full h-full sm:w-10 sm:h-10 rounded-full overflow-hidden">
                                         <Image
                                             src="/images/avatar1.jpg"
                                             alt="Author avatar"
                                             width={40}
                                             height={40}
-                                            className="w-full h-full object-cover"
+                                            className="w-[40px] h-[40px] object-cover"
                                         />
                                     </div>
-                                    <div className="h-10 w-[80%] flex flex-col items-start justify-between">
+                                    </div>
+                                    <div className="h-10 w-[78%] flex flex-col items-start justify-between">
                                         <div className="flex items-center justify-between w-full">
                                             <h3 className="ps-2 md:ps-0 text-sm text-black dark:text-white font-poppins font-semibold truncate">
                                                 Ana Belly

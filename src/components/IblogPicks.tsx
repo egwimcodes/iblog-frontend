@@ -15,15 +15,20 @@ export default function IBlogPicks() {
                     <div key={index} className="space-y-2">
                         {/* Author Info */}
                         <div className="flex items-center gap-3">
-                            <div className="w-12 h-10 rounded-full overflow-hidden">
-                                <Image
-                                    src={`/images/${index === 2 ? "avatar1.jpg" : "user-avatar.jpg"}`}
-                                    alt="Avatar"
-                                    width={40}
-                                    height={40}
-                                    className="w-full h-full object-cover"
-                                />
+
+                            <div className="flex-shrink-0">
+
+                                <div className="avatar w-full h-full sm:w-10 sm:h-10 rounded-full overflow-hidden">
+                                    <Image
+                                        src={`/images/${index === 2 ? "avatar1.jpg" : "user-avatar.jpg"}`}
+                                        alt="Author avatar"
+                                        width={40}
+                                        height={40}
+                                        className="w-[40px] h-[40px] object-cover"
+                                    />
+                                </div>
                             </div>
+
                             <div className="flex justify-between w-full text-sm">
                                 <h3 className="font-poppins font-bold">Ana Belly</h3>
                                 <p className="font-poppins text-gray-500">2d ago</p>

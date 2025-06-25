@@ -33,15 +33,18 @@ export default function SavedRecent() {
                 {[1, 2, 3].map((_, i) => (
                     <div key={i} className="space-y-2">
                         <div className="flex items-center space-x-2">
-                            <div className="w-10 h-10 rounded-full overflow-hidden">
-                                <Image
-                                    src="/images/user-avatar.jpg"
-                                    alt="Avatar"
-                                    width={40}
-                                    height={40}
-                                    className="w-full h-full object-cover"
-                                />
-                            </div>
+                            <div className="flex-shrink-0">
+                            
+                                                            <div className="avatar w-full h-full sm:w-10 sm:h-10 rounded-full overflow-hidden">
+                                                                <Image
+                                                                    src={`/images/user-avatar.jpg`}
+                                                                    alt="Author avatar"
+                                                                    width={40}
+                                                                    height={40}
+                                                                    className="w-[40px] h-[40px] object-cover"
+                                                                />
+                                                            </div>
+                                                        </div>
                             <div className="flex justify-between w-full">
                                 <h3 className="text-sm font-bold font-poppins">Ana Belly</h3>
                                 <h3 className="text-sm font-poppins">2d ago</h3>

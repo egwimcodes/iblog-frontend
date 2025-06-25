@@ -59,7 +59,7 @@ export default function ArticleCard({ data }: ArticleCardProps) {
                                     </h2>
                                 </Link>
 
-                                <div className="mini-content w-full flex flex-row gap-4">
+                                <div className="mini-content w-full min-h-[80px] flex flex-row gap-4">
                                     <p className="flex-[3] text-sm leading-relaxed line-clamp-4 text-gray-500 dark:text-gray-400">
                                         {data.excerpt}
                                     </p>
@@ -81,14 +81,17 @@ export default function ArticleCard({ data }: ArticleCardProps) {
                         <div className="p-[1px] w-[50dvw] md:w-[25dvw] lg:w-[16dvw] max-w-[300px] rounded-xl bg-gradient-to-t from-purple-600 via-pink-500 to-purple-600 overflow-hidden">
                             <div className="bg-background-light dark:bg-background-dark transition-colors duration-500 p-2 rounded-[calc(0.75rem-1px)]">
                                 <div className="flex items-center justify-between">
-                                    <div className="avatar w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
-                                        <Image
-                                            src={data.author.avatar}
-                                            alt={data.author.name}
-                                            width={40}
-                                            height={40}
-                                            className="w-full h-full object-cover"
-                                        />
+                                    <div className="flex-shrink-0">
+
+                                        <div className="avatar w-full h-full sm:w-10 sm:h-10 rounded-full overflow-hidden">
+                                            <Image
+                                                src="/images/avatar1.jpg"
+                                                alt="Author avatar"
+                                                width={40}
+                                                height={40}
+                                                className="w-[40px] h-[40px] object-cover"
+                                            />
+                                        </div>
                                     </div>
                                     <div className="h-10 w-[80%] flex flex-col items-start justify-between">
                                         <div className="flex items-center justify-between w-full">

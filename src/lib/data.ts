@@ -1,11 +1,12 @@
 export const articles = [
   {
     id: 1,
-    title: "2050’s Ultimate Speed Machines",
+    title: "2050’s Ultimate Speed Machines: The Sports Cars of Tomorrow ",
     slug: "2050s-ultimate-speed-machines",
-    excerpt: "Explore cutting-edge automotive innovations of 2050.",
+    excerpt:
+      "Explore cutting-edge automotive innovations of 2050. Explore cutting-edge automotive innovations of 2050. Explore cutting-edge automotive innovations of 2050.",
     content:
-      "Explore cutting-edge automotive innovations expected by 2050, featuring electric supercars, autonomous race vehicles, and AI-assisted driving experiences that redefine speed and luxury.",
+      "It’s frustrating to spend days on a draft, finally get ready tohit that publish button, only to then spend extra time hunting for the perfect picture to illustrate your story.It’s frustrating to spend days on a draft, finally get ready for the perfect picture to illustrate your story.It’s days on a draft, finally get ready tohit Let’s be honest — most of us stick to the usual suspects when it,comes to open-source tools. React, TensorFlow, Docker, Next.js. Legends, yes — but in 2025, there’s an underground movement of projects that are solving hard problems in beautiful ways. And they deserve your attention.It’s frustrating to spend days on a draft, finally get ready tohit that publish button, only to then spend extra time hunting for the perfect picture to illustrate your story.It’s frustrating to spend days on a draft, finally get ready for the perfect picture to illustrate your story.It’s days on a draft, finally get ready tohit Let’s be honest — most of us stick to the usual suspects when it,comes to open-source tools. React, TensorFlow, Docker, Next.js. Legends, yes — but in 2025, there’s an underground movement of projects that are solving hard problems in beautiful ways. And they deserve your attention.",
     image: "/images/speed-machine.jpg",
     date: "2025-06-19",
     timeAgo: "1 min ago",

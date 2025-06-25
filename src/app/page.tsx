@@ -1,5 +1,6 @@
 "use client"
 import ArticleCard from '@/components/ArticleCard'
+import Footer from '@/components/Footer'
 import LeftSideBar from '@/components/LeftSideBar'
 import NavBar from '@/components/NavBar'
 import RightSideBar from '@/components/RightSideBar'
@@ -58,6 +59,7 @@ export default function Home() {
           <RightSideBar />
         </aside>
       </main>
+      <Footer />  
     </div>
   )
 }
