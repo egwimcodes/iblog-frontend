@@ -17,3 +17,4 @@ export interface Author {
   avatar: string;
   bio: string;
 }
+

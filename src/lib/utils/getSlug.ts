@@ -1,16 +1,7 @@
 import { articles } from "../data";
 
-export const getArticleBySlug = async (slug: string) =>
+export const  getArticleBySlug = async (slug: string) =>
   articles.find((article) => article.slug === slug);
-
-
-// export const getArticleBySlug = async (slug: string) => {
-//   console.log(slug);
-//   const found = articles.find((article) => article.slug === slug);
-//   console.log(`what's expected: ${found}`);
-//   return found;
-// };
-
 
 // lib/utils.ts
 import { clsx, ClassValue } from "clsx";

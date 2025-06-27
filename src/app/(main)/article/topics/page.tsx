@@ -1,11 +1,21 @@
+import CategoryList from "@/components/CategoryList";
+import TopicsHeading from "@/components/TopicsHeading";
 export default function SearchTopics() {
+    return (<>
+     {/* Topics Heading */}
+          <div className="w-full mb-4">
+            <TopicsHeading />
+          </div>
     
-    return (
-        <div className="search-topics">
-            <h2 className="title text-xl text-black dark:text-white font-inter font-bold mb-2 hover:text-purple-600 transition-colors duration-300 cursor-pointer mx-auto">
-                Search Topics
-            </h2>
+        <div className="search-topics w-full flex flex-col space-y-4">
+            <div className="heading flex flex-col items-center my-10">
+                <h1 className="title text-2xl text-neutral-900 dark:text-white font-inter font-bold hover:text-purple-600 transition-colors duration-300 cursor-pointer">
+                    Explore topics
+                </h1>
+            </div>
 
+            <CategoryList />
         </div>
+    </>
     );
 }

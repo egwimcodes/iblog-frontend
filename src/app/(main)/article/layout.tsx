@@ -12,20 +12,13 @@ export default function ArticleLayout({
   children,
   leftSideBar,
   rightSideBar,
+
 }: {
-  children: React.ReactNode;
-  leftSideBar: React.ReactNode;
-  rightSideBar: React.ReactNode;
+    children: React.ReactNode;
+    leftSideBar: React.ReactNode;
+    rightSideBar: React.ReactNode;
+
 }) {
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000); // simulate loading time
-
-  //   return () => clearTimeout(timer);
-  // }, []);
 
   return (<>
     <div className="min-h-screen text-gray-800 dark:text-white">
@@ -46,10 +39,10 @@ export default function ArticleLayout({
             <SearchBar />
           </div>
 
-        
+
 
           {/* Articles */}
-          
+
           <div className="w-full space-y-4">
             {children}
           </div>

@@ -1,17 +1,11 @@
 // app/not-found.tsx
-'use client';
-
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { PiWarningCircleLight } from 'react-icons/pi';
 
 export default function NotFound() {
     return (
-        <motion.div
+        <div
             className="min-h-screen flex flex-col items-center justify-center bg-background-light dark:bg-background-dark px-4 text-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
         >
             <PiWarningCircleLight className="text-brand dark:text-brand text-7xl mb-4" />
 
@@ -26,6 +20,6 @@ export default function NotFound() {
             <Link href="/" className="bg-brand text-white dark:text-black px-6 py-3 rounded-full font-medium hover:opacity-90 transition">
                  {'<< Go back to Homepage'}
             </Link>
-        </motion.div>
+        </div>
     );
 }
