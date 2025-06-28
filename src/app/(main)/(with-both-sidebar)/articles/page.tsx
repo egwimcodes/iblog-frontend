@@ -1,12 +1,6 @@
-"use client"
+"use client";
 import ArticleCard from '@/components/ArticleCard'
-import Footer from '@/components/Footer'
-import LeftSideBar from '@/components/LeftSideBar'
-import NavBar from '@/components/NavBar'
-import RightSideBar from '@/components/RightSideBar'
-import SearchBar from '@/components/SearchBar'
 import SkeletonCard from '@/components/SkeletonCard'
-import ThemeToggleButton from '@/components/ThemeToggle'
 import TopicsHeading from '@/components/TopicsHeading'
 import { articles } from '@/lib/data'
 import { useState, useEffect } from "react";

@@ -46,7 +46,7 @@ export default function Home() {
                 </p>
                 <div className="mt-8 flex justify-center gap-4">
                     <Button variant="primary">Start Blogging</Button>
-                    <Link href={"/article"}>
+                    <Link href={"/articles"}>
                     <Button variant="outline">Explore Blogs</Button>
                     </Link>
                 </div>

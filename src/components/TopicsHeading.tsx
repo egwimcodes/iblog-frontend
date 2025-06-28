@@ -23,7 +23,7 @@ export default function TopicsHeading() {
 
     return (
         <div className="w-[95dvw] lg:w-[45dvw] max-w-[700px]  h-14 flex flex-row items-center space-x-2">
-            <Link rel="stylesheet" href="/article/topics" >
+            <Link rel="stylesheet" href="/topics" >
             <IoMdAdd className="w-8 h-8 text-gray-500 dark:text-gray-400" />
             </Link>
             <ul className="flex space-x-4 overflow-x-auto whitespace-nowrap w-full no-scrollbar px-2 scroll-smooth">

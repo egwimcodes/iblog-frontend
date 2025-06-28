@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="w-full border-t border-gray-200  dark:border-gray-500 py-6 mt-10 bg-">
+        <footer className="w-full border-t border-gray-200  dark:border-gray-500 py-6 ">
             <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
                     © {new Date().getFullYear()} IBLOG. All rights reserved.

@@ -9,8 +9,8 @@ export default function SearchTopics() {
     
         <div className="search-topics w-full flex flex-col space-y-4">
             <div className="heading flex flex-col items-center my-10">
-                <h1 className="title text-2xl text-neutral-900 dark:text-white font-inter font-bold hover:text-purple-600 transition-colors duration-300 cursor-pointer">
-                    Explore topics
+                <h1 className="title text-3xl text-neutral-900 dark:text-white font-inter font-bold hover:text-purple-600 transition-colors duration-300 cursor-pointer">
+                    Explore Topics
                 </h1>
             </div>
 

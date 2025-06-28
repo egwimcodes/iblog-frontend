@@ -7,7 +7,7 @@ export default function SavedRecent() {
 
     return (
         <div className="flex flex-col w-full items-center">
-            <div className="h-14 flex items-center space-x-2 overflow-x-auto w-full px-2 no-scrollbar">
+            <div className="h-14 flex items-center space-x-2 overflow-x-auto w-full px-2 no-scrollbar mx-auto">
                 <ul className="flex space-x-4 overflow-x-auto whitespace-nowrap scroll-smooth">
                     {topics.map((topic) => (
                         <li
