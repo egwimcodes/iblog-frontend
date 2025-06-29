@@ -10,6 +10,12 @@
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
+    "@tiptap/extension-blockquote": "^2.23.0",
+    "@tiptap/extension-code-block": "^2.23.0",
+    "@tiptap/extension-image": "^2.23.0",
+    "@tiptap/pm": "^2.23.0",
+    "@tiptap/react": "^2.23.0",
+    "@tiptap/starter-kit": "^2.23.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.19.1",
     "next": "^15.3.4",

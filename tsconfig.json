@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/(main)/(with-right-sidebar)/article/[slug]/...layout.tsx"
-  ],
+, "src/components/Editor.js"  ],
   "exclude": ["node_modules"]
 }

@@ -79,7 +79,7 @@ export default function NavBar() {
                     {/* Right Side Buttons */}
                     {isLoggedIn ? (
                         <div className="flex items-center space-x-4">
-                            <button className="flex items-center" aria-label="Create post">
+                            <button className="flex items-center" aria-label="Create post" onClick={() => router.push("/editor")}>
                                 <FiEdit className="mx-4 w-5 h-5 text-brand" />
                                 <span className="text-base text-brand font-medium">Write</span>
                             </button>
