@@ -43,10 +43,11 @@ export default {
         poltawskiNowy: ["var(--font-poltawskiNowy)", "sans-serif"],
       },
       screens: {
-        xsm: { max: "360px" }, 
+        xsm: { max: "360px" },
       },
     },
   },
+  plugins: [require("@tailwindcss/typography")],
 } satisfies Config;
 
 
