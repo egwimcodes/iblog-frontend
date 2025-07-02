@@ -7,8 +7,13 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Button } from "@/components/ui/Button";
 import ThemeToggleButton from "@/components/ThemeToggle";
+import { useState } from "react";
+import { AuthModal } from "@/components/AuthModal";
 
 export default function Home() {
+    const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+    const [authModalView, setAuthModalView] = useState<"login" | "register" | "reset">("login");
+  
     return (
         <main className="relative min-h-screen w-full bg-background text-foreground overflow-hidden">
             <ThemeToggleButton />
@@ -23,7 +28,21 @@ export default function Home() {
                     <Link href="#blogs"><span className="hover:underline">Blogs</span></Link>
                     <Link href="#about"><span className="hover:underline">About</span></Link>
                 </div>
-                <Button variant="outline">Register</Button>
+                <Button
+                    variant="outline"
+                    onClick={() => {
+                        setAuthModalView("login");
+                        setIsAuthModalOpen(true);
+                    }}
+                >
+                    Login
+                </Button>
+
+                <AuthModal
+                    isOpen={isAuthModalOpen}
+                    onClose={() => setIsAuthModalOpen(false)}
+                    initialView={authModalView}
+                />
             </nav>
 
             {/* Spotlight Background */}

@@ -15,7 +15,7 @@ const EditorJSWriter: React.FC<EditorJSWriterProps> = ({ data, onChange, readOnl
     const holder = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (!holder.current) return;
+        if (!holder.current || ejInstance.current) return;
 
         ejInstance.current = new EditorJS({
             holder: holder.current,
@@ -49,7 +49,7 @@ const EditorJSWriter: React.FC<EditorJSWriterProps> = ({ data, onChange, readOnl
             }
         };
     }, [readOnly]);
-
+    
     return (
         <div className="w-full max-w-2xl mx-auto py-8">
             <input
@@ -61,8 +61,9 @@ const EditorJSWriter: React.FC<EditorJSWriterProps> = ({ data, onChange, readOnl
             />
             <div
                 ref={holder}
-                className="min-h-[400px] bg-transparent focus:outline-none"
+                className="input-block min-h-[400px] bg-transparent focus:outline-none "
             />
+            
         </div>
     );
 };
