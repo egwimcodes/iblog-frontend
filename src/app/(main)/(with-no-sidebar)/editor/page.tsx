@@ -124,10 +124,10 @@ export default function CreatePostPage() {
             <div className="featured-img-container  ">
                 <label className="block text-lg font-semibold mb-2">Featured Image</label>
                 <div className="content flex flex-row items-center justify-between">
-                    <div className="drag-drop flex-[2] h-40 w-full flex flex-col items-center bg-red-600">
+                    <div className="drag-drop flex-[2] h-40 w-full flex flex-col items-center ">
                         <div
                             ref={dropRef}
-                            className={`border-dashed border-2 rounded-lg p-6 text-center transition-colors
+                            className={`border-dashed border-2 rounded-lg p-6 text-center transition-colors h-full flex items-center justify-center
         ${isDragActive ? 'border-blue-500 bg-blue-50' : 'border-gray-300'}`}
                             onDragOver={handleDragOver}
                             onDragLeave={handleDragLeave}
