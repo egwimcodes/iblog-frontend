@@ -9,11 +9,12 @@ import { Button } from "@/components/ui/Button";
 import ThemeToggleButton from "@/components/ThemeToggle";
 import { useState } from "react";
 import { AuthModal } from "@/components/AuthModal";
+import { ResetPasswordModal } from "@/components/PasswordReset";
 
 export default function Home() {
     const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
     const [authModalView, setAuthModalView] = useState<"login" | "register" | "reset">("login");
-  
+
     return (
         <main className="relative min-h-screen w-full bg-background text-foreground overflow-hidden">
             <ThemeToggleButton />
@@ -37,12 +38,15 @@ export default function Home() {
                 >
                     Login
                 </Button>
+                <div className=" absolute">
 
-                <AuthModal
-                    isOpen={isAuthModalOpen}
-                    onClose={() => setIsAuthModalOpen(false)}
-                    initialView={authModalView}
-                />
+                    <AuthModal
+                        isOpen={isAuthModalOpen}
+                        onClose={() => setIsAuthModalOpen(false)}
+                        initialView={authModalView}
+                    />
+                    <ResetPasswordModal isOpen={false} onClose={() => setIsAuthModalOpen(false)} />
+                </div>
             </nav>
 
             {/* Spotlight Background */}
@@ -66,7 +70,7 @@ export default function Home() {
                 <div className="mt-8 flex justify-center gap-4">
                     <Button variant="primary">Start Blogging</Button>
                     <Link href={"/articles"}>
-                    <Button variant="outline">Explore Blogs</Button>
+                        <Button variant="outline">Explore Blogs</Button>
                     </Link>
                 </div>
             </section>

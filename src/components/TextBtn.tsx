@@ -3,13 +3,15 @@ type TextBtnProps = {
     onClick?: () => void;
     disabled?: boolean;
     className?: string;
+    children?: React.ReactNode;
 };
 
 export default function TextBtn({
     label,
     onClick,
     disabled = false,
-    className = ""
+    className = "",
+    children,
 }: TextBtnProps) {
     return (
         <button
@@ -23,16 +25,18 @@ export default function TextBtn({
                 h-full rounded-[calc(3rem-20px)] 
                 flex items-center justify-center
                 ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}
-            `}>
-                <p className={`
-                    text-brand text-opacity-75 
-                    dark:text-background-light 
-                    font-inter font-medium
-                    group-hover:text-opacity-100
-                    ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}
-                `}>
-                    {label}
-                </p>
+            `}>{
+                    label ? (<p className={`
+                        text-brand text-opacity-75 
+                        dark:text-background-light 
+                        font-inter font-medium
+                        group-hover:text-opacity-100
+                        ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}
+                    `}>
+                        {label}
+                    </p>) : children
+                }
+
             </div>
         </button>
     );

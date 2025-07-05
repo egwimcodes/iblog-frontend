@@ -2,6 +2,9 @@
 import { useState, useRef } from 'react';
 import dynamic from "next/dynamic";
 import { savePost } from '@/services/api';
+import { FiUpload } from 'react-icons/fi';
+import OutlineBtn from '@/components/OutlineBtn';
+import TextBtn from '@/components/TextBtn';
 
 // Dynamically import EditorJSWriter with SSR disabled
 const EditorJSWriter = dynamic(
@@ -103,21 +106,27 @@ export default function CreatePostPage() {
 
             {/* Post Meta Fields */}
             <div className="mt-8 mb-6 space-y-4">
-                <input
-                    type="text"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Seo Title (for SEO)"
-                    className="w-full px-3 py-2 border rounded focus:outline-none placeholder-gray-400"
-                    maxLength={120}
-                />
-                <textarea
-                    value={metaDescription}
-                    onChange={(e) => setMetaDescription(e.target.value)}
-                    placeholder="Meta description (for SEO)"
-                    className="w-full border rounded px-3 py-2"
-                    rows={3}
-                />
+                {/* Gradient border for input */}
+                <div className="p-[1px] rounded-lg bg-gradient-to-t from-purple-600 via-pink-500 to-purple-600">
+                    <input
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        placeholder="Seo Title (for SEO)"
+                        className="w-full px-3 py-2 rounded-[calc(3rem-41px)]   bg-opacity-100 focus:bg-opacity-95 focus:outline-none placeholder-gray-400 border-none"
+                        maxLength={120}
+                    />
+                </div>
+                {/* Gradient border for textarea */}
+                <div className="p-[1px] rounded-lg bg-gradient-to-t from-purple-600 via-pink-500 to-purple-600">
+                    <textarea
+                        value={metaDescription}
+                        onChange={(e) => setMetaDescription(e.target.value)}
+                        placeholder="Meta description (for SEO)"
+                        className="w-full rounded-[calc(3rem-41px)] px-3 py-2  bg-opacity-100 focus:bg-opacity-95 focus:outline-none placeholder-gray-400 border-none text-black"
+                        rows={3}
+                    />
+                </div>
             </div>
 
             {/* Featured Image Upload */}
@@ -162,7 +171,6 @@ export default function CreatePostPage() {
                         <span className="font-popoins font-semibold text-3xl text-pink-500 mx-4">or</span>
                     </div>
                     <div className="mb-6 flex-[2] w-full flex flex-col items-center">
-                        <label className="block text-lg font-semibold mb-2">Featured Image</label>
                         <div className="flex items-center gap-4">
                             <input
                                 type="file"
@@ -171,36 +179,49 @@ export default function CreatePostPage() {
                                 onChange={handleImageChange}
                                 className="hidden"
                             />
-                            <label
-                                htmlFor="featuredImage"
-                                className="cursor-pointer bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold shadow hover:scale-105 active:scale-95 transition-all"
-                            >
-                                Choose File
-                            </label>
+                            <div className="p-[2px] rounded-md bg-gradient-to-t from-purple-600 via-pink-500 to-purple-600 shadow">
+                                <label
+                                    htmlFor="featuredImage"
+                                    className="cursor-pointer bg-background-light dark:bg-background-dark text-pink-500 rounded-md flex items-center justify-center p-3 w-full h-full hover:scale-95 active:scale-100 transition-all"
+                                    title="Upload Image"
+                                >
+                                    <FiUpload size={24} />
+                                </label>
+                            </div>
                             {featuredImage && (
                                 <span className="text-sm text-gray-700 truncate max-w-xs">
                                     {featuredImage.name}
                                 </span>
                             )}
                         </div>
-                        {imagePreviewUrl && (
-                            <img
-                                src={imagePreviewUrl}
-                                alt="Preview"
-                                className="mt-4 w-full max-h-96 object-cover rounded-lg border"
-                            />
-                        )}
                     </div>
                 </div>
 
             </div>
 
             {/* Save Button */}
-            <div className="flex justify-end mt-8">
-                <button
+            <div className="flex justify-end my-20 h-10">
+                <TextBtn
                     onClick={handleSave}
-                    disabled={saving}
-                    className={`px-6 py-2 rounded-lg font-semibold shadow transition-all
+                    label='Draft'
+                    className={`font-semibold bg-transparent w-[100px] mx-10
+                        ${saving ? 'text-blue-400' :
+                            saveStatus === 'success' ? 'text-green-500' :
+                                saveStatus === 'error' ? 'text-red-500' : 'text-blue-600'
+                        } text-white  active:scale-95`}
+                >
+                    {saving
+                        ? 'Saving...'
+                        : saveStatus === 'success'
+                            ? 'Saved!'
+                            : saveStatus === 'error'
+                                ? 'Error'
+                                : 'Save'}
+                </TextBtn>
+                <OutlineBtn
+                    onClick={handleSave}
+                    label='Publish'
+                    className={`font-semibold w-[200px] shadow transition-all
                         ${saving ? 'bg-blue-400' :
                             saveStatus === 'success' ? 'bg-green-500' :
                                 saveStatus === 'error' ? 'bg-red-500' : 'bg-blue-600'
@@ -213,7 +234,7 @@ export default function CreatePostPage() {
                             : saveStatus === 'error'
                                 ? 'Error'
                                 : 'Save'}
-                </button>
+                </OutlineBtn>
             </div>
         </div>
     );

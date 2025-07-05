@@ -84,7 +84,7 @@ export default function NavBar() {
                                 <span className="text-base text-brand font-medium">Write</span>
                             </button>
 
-                            <button className="p-2" aria-label="Notifications">
+                            <button className="p-2" aria-label="Notifications" onClick={() => router.push("/notifications")}>
                                 <GoBell className="mx-4 w-5 h-5 text-brand" />
                             </button>
 
