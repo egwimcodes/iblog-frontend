@@ -3,7 +3,7 @@ import TopicsHeading from "@/components/TopicsHeading";
 export default function SearchTopics() {
     return (<>
      {/* Topics Heading */}
-          <div className="w-full mb-4">
+          <div className=" mb-4">
             <TopicsHeading />
           </div>
     

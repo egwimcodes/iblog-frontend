@@ -2,19 +2,20 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Poppins, Inter, Poltawski_Nowy } from "next/font/google";
 import "../styles/globals.css";
+import ThemeToggleButton from "@/components/ThemeToggle";
 
-const poppins = Poppins({
+export const poppins = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
-const inter = Inter({
+export const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
-const poltawskiNowy = Poltawski_Nowy({
+export const poltawskiNowy = Poltawski_Nowy({
   variable: "--font-poltawskiNowy",
   subsets: ["latin"],
 });
@@ -116,6 +117,8 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-dvh bg-background-light dark:bg-background-dark transition-colors duration-500 text-black">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeToggleButton />
+
           {children}
         </ThemeProvider>
       </body>

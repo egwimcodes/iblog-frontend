@@ -4,24 +4,72 @@
 
 /* tailwind.css or global.css */
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  .no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;     /* Firefox */
-  }
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
-  .gradient-border {
-    background: linear-gradient(to top, #7e22ce, #ec4899, #7e22ce); /* Tailwind's purple-600 → pink-500 → purple-600 */
-    padding: 2px; /* thickness of the "border" */
-    border-radius: 12px; /* optional */
-    display: inline-block;
+.gradient-border {
+  background: linear-gradient(
+    to top,
+    #7e22ce,
+    #ec4899,
+    #7e22ce
+  ); /* Tailwind's purple-600 → pink-500 → purple-600 */
+  padding: 2px; /* thickness of the "border" */
+  border-radius: 12px; /* optional */
+  display: inline-block;
+}
+
+.inner-content {
+  background-color: white; /* or use dark background as needed */
+  border-radius: 10px; /* match inner radius for smooth edge */
+  padding: 1rem; /* your content padding */
+  height: 100%;
+  width: 100%;
+}
+
+/* @keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
   }
-  
-  .inner-content {
-    background-color: white; /* or use dark background as needed */
-    border-radius: 10px; /* match inner radius for smooth edge */
-    padding: 1rem; /* your content padding */
-    height: 100%; width: 100%;
+  50% {
+    transform: translateY(-100px) translateX(20px);
   }
-  
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+} */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes shimmer {
+  0% {
+    --shimmer-angle: 0deg;
+  }
+  100% {
+    --shimmer-angle: 360deg;
+  }
+}
+@property --shimmer-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* 
+@keyframes float {
+  0% { transform: translateY(0px);}
+  50% { transform: translateY(-20px);}
+  100% { transform: translateY(0px);}
+} */

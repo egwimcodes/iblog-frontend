@@ -48,6 +48,15 @@ export default {
     },
   },
   plugins: [require("@tailwindcss/typography")],
+  animation: {
+    floating: "floatUpDown 15s ease-in-out infinite",
+  },
+  keyframes: {
+    floatUpDown: {
+      "0%, 100%": { transform: "translateY(0px)" },
+      "50%": { transform: "translateY(-10px)" },
+    },
+  },
 } satisfies Config;
 
 

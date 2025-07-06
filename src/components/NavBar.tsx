@@ -56,7 +56,7 @@ export default function NavBar() {
     }
 
     return (
-        <nav className="sticky top-0 z-50 bg-white dark:bg-neutral-900 shadow-sm">
+        <nav className="sticky top-0 z-50 bg-transparent shadow-sm">
             <div className="min-w-dvw min-h-20 flex justify-center items-center mt-4">
                 <div className="w-[95%] h-16 rounded-lg flex justify-between items-center">
                     {/* Logo */}
@@ -80,7 +80,7 @@ export default function NavBar() {
                     {isLoggedIn ? (
                         <div className="flex items-center space-x-4">
                             <button className="flex items-center" aria-label="Create post" onClick={() => router.push("/editor")}>
-                                <FiEdit className="mx-4 w-5 h-5 text-brand" />
+                                <FiEdit className="mx-2 w-5 h-5 text-brand" />
                                 <span className="text-base text-brand font-medium">Write</span>
                             </button>
 

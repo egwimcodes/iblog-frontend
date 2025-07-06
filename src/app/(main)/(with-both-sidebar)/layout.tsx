@@ -21,7 +21,7 @@ export default function ArticleLayout({
 
   return (<>
     <div className="min-h-screen text-gray-800 dark:text-white">
-      <ThemeToggleButton />
+      
       <NavBar />
 
       <main className="flex flex-col md:flex-row max-w-screen-xl mx-auto px-4 md:px-6 lg:px-12">
@@ -42,7 +42,7 @@ export default function ArticleLayout({
 
           {/* Articles */}
 
-          <div className="w-full space-y-4">
+          <div className="w-full space-y-4 mb-20">
             {children}
           </div>
         </section>
