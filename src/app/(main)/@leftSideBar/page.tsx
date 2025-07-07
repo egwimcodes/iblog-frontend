@@ -11,7 +11,7 @@ export default function LeftSideBar() {
         <aside className="hidden md:flex flex-col w-[18vw] lg:w-[16vw] xl:w-[14vw] max-w-[240px] px-4 md:px-2 mt-16">
             {/* Cover Section */}
             <div className="relative flex flex-col h-[150px] w-full ">
-                <div className="w-full max-h-[150px] overflow-hidden rounded-t-2xl bg-orange-400">
+                <div className="w-full max-h-[150px] overflow-hidden rounded-t-2xl ">
                     <Image
                         src="/images/cover-bg.jpg"
                         alt="Cover"

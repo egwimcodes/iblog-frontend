@@ -5,7 +5,7 @@ import Footer from '@/components/Footer';
 
 import NavBar from '@/components/NavBar';
 import { articles } from '@/lib/data'
-import SkeletonCard from '@/components/SkeletonCard';
+import SkeletonCard from '@/components/Skeletons/SkeletonCard';
 import ArticleCard from '@/components/ArticleCard';
 import RightSideBar from '@/components/RightSideBar';
 import LeftSideBar from '@/components/LeftSideBar';
@@ -22,7 +22,7 @@ export default function ArticleLayout({
         {/* Left Sidebar  */}
         <aside className="hidden md:block w-[18vw] lg:w-[16vw] xl:w-[14vw]">
           {/* <LeftSideBar /> */}
-         
+
         </aside>
 
         {/* Main Content */}
@@ -46,7 +46,7 @@ export default function ArticleLayout({
           <RightSideBar />
         </aside>
       </main>
-      
+
     </div>
 
   </>

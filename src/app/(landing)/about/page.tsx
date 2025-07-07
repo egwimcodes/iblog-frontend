@@ -40,7 +40,7 @@ export default function About() {
     ];
 
     return (
-        <Layout>
+        <>
             <main className="relative min-h-screen w-full bg-background text-foreground overflow-hidden">
             
 
@@ -76,11 +76,20 @@ export default function About() {
 
                     <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                         {stats.map((stat, index) => (
-                            <div key={index} className="p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
-                                <div className="text-purple-400 mb-2">{stat.icon}</div>
-                                <div className="text-2xl font-bold text-white">{stat.value}</div>
-                                <div className="text-sm text-zinc-300">{stat.label}</div>
+                            <div
+                                key={index}
+                                className="p-4 rounded-xl 
+                                       bg-transparent dark:bg-white/5 
+                                       backdrop-blur-sm 
+                                       border border-zinc-300/40 dark:border-white/10 
+                                       hover:bg-zinc-200/60 dark:hover:bg-white/10 
+                                       transition-colors"
+                            >
+                                <div className="text-purple-600 dark:text-purple-400 mb-2">{stat.icon}</div>
+                                <div className="text-2xl font-bold text-zinc-800 dark:text-white">{stat.value}</div>
+                                <div className="text-sm text-zinc-600 dark:text-zinc-300">{stat.label}</div>
                             </div>
+                          
                         ))}
                     </div>
                 </section>
@@ -153,14 +162,9 @@ export default function About() {
                     </div>
                 </section>
 
-                {/* Footer */}
-                <footer className="w-full mt-32 py-10 text-center text-sm text-zinc-400 dark:text-zinc-300 relative z-10">
-                    Built with ❤️ by <a href="https://egwimcodes.dev" className="underline text-pink-400">egwimcodes</a> • © {new Date().getFullYear()}
-                </footer>
-
                 <BackgroundBeams />
             </main>
-        </Layout>
+        </>
     );
 }
 

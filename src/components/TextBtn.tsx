@@ -17,14 +17,14 @@ export default function TextBtn({
         <button
             onClick={onClick}
             disabled={disabled}
-            className={`max-w-contain h-10 p-[1px] group ${className}`}
+            className={`max-w-contain h-10 p-[1px] group bg-transparent hover:bg-transparent ${className}`}
             aria-label={label}
         >
             <div className={`
                 transition-all duration-300 
                 h-full rounded-[calc(3rem-20px)] 
                 flex items-center justify-center
-                ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}
+                ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-transparent dark:hover:bg-transparent'}
             `}>{
                     label ? (<p className={`
                         text-brand text-opacity-75 

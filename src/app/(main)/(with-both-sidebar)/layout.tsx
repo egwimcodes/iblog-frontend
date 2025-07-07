@@ -20,11 +20,11 @@ export default function ArticleLayout({
 }: LayoutProps) {
 
   return (<>
-    <div className="min-h-screen text-gray-800 dark:text-white">
+    <div className="min-h-screen text-gray-800 dark:text-white ">
       
       <NavBar />
 
-      <main className="flex flex-col md:flex-row max-w-screen-xl mx-auto px-4 md:px-6 lg:px-12">
+      <main className="flex flex-col md:flex-row max-w-screen-xl mx-auto px-4 md:px-6 lg:px-12 space-y-4">
         {/* Left Sidebar  */}
         <aside className="hidden md:block w-[18vw] lg:w-[16vw] xl:w-[14vw]">
           {/* <LeftSideBar /> */}
@@ -42,7 +42,7 @@ export default function ArticleLayout({
 
           {/* Articles */}
 
-          <div className="w-full space-y-4 mb-20">
+          <div className="w-full  mb-20 ">
             {children}
           </div>
         </section>

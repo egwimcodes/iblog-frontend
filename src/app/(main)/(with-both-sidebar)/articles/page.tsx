@@ -1,6 +1,6 @@
 "use client";
 import ArticleCard from '@/components/ArticleCard'
-import SkeletonCard from '@/components/SkeletonCard'
+import SkeletonCard from '@/components/Skeletons/SkeletonCard'
 import TopicsHeading from '@/components/TopicsHeading'
 import { articles } from '@/lib/data'
 import { useState, useEffect } from "react";
@@ -16,12 +16,12 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
   return (
-    
+
     <>
-        {/* Topics Heading */}
-        <div className="w-full mb-4">
-            <TopicsHeading />
-          </div>
+      {/* Topics Heading */}
+      <div className="w-full mb-4">
+        <TopicsHeading />
+      </div>
       <div className="w-full space-y-6">
         {loading
           ? Array.from({ length: 5 }).map((_, index) => <SkeletonCard key={index} />)

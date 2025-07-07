@@ -61,14 +61,17 @@ export default function NavBar() {
                 <div className="w-[95%] h-16 rounded-lg flex justify-between items-center">
                     {/* Logo */}
                     <Link href="/">
-                        <Image
+                        {/* <Image
                             src="/images/IBlog.png"
                             alt="Company Logo"
                             width={80}
                             height={20}
                             priority
                             className="hover:opacity-80 transition-opacity"
-                        />
+                        /> */}
+                        <h1 className="ml-4 md:ml-0 text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
+                            IBLOG
+                        </h1>
                     </Link>
 
                     {/* Search */}

@@ -6,9 +6,11 @@ export default function WhoToFollow() {
     return (
         <div className="w-full flex flex-col">
             {/* Header */}
-            <h1 className="iblog-picks relative inline-block text-lg md:text-xl lg:text-2xl font-bold">
-                <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 h-1 absolute left-0 bottom-0 w-[70%] rounded-full"></span>
-                <span className="relative z-10">Who To Follow 🚶‍♂️‍➡️</span>
+            <h1 className="text-lg md:text-lg font-bold">
+                <span className="relative inline-block">
+                    <span className="relative z-10">Who to follow</span>
+                    <span className="block absolute left-0 bottom-0 w-full h-1 bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 rounded-full"></span>
+                </span>
             </h1>
             {/* Picks List */}
             <div className="items w-full space-y-6 mt-6">
@@ -20,13 +22,13 @@ export default function WhoToFollow() {
                                 <div className="flex items-center justify-between ">
                                     <div className="flex-shrink-0 mr-1">
 
-                                    <div className="avatar w-full h-full sm:w-10 sm:h-10 rounded-full overflow-hidden">
+                                    <div className="avatar w-8 h-8 rounded-full overflow-hidden">
                                         <Image
                                             src="/images/avatar1.jpg"
                                             alt="Author avatar"
-                                            width={40}
-                                            height={40}
-                                            className="w-[40px] h-[40px] object-cover"
+                                                width={24}
+                                                height={24}
+                                                className="w-full h-full object-cover"
                                         />
                                     </div>
                                     </div>
