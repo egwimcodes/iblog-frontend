@@ -3,12 +3,11 @@ import ArticleDetail from "./articlesDetail";
 import { getArticleBySlug } from "@/lib/utils/getSlug";
 import TopicsHeading from "@/components/TopicsHeading";
 
-export default async function ArticleDetailPage({
-  params: { slug },
-}: {
-  params: { slug: string };
-}) {
 
+export type paramsType = Promise<{slug: string}>
+export default async function ArticleDetailPage(props:{params:paramsType}
+) {
+  const { slug } = await props.params;
   const article = await getArticleBySlug(slug);
 
   if (!article) {

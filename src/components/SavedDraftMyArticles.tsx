@@ -1,7 +1,6 @@
 'use client';
 import Image from "next/image";
 import { useState } from "react";
-import { BiBookmarkAltPlus } from "react-icons/bi";
 import { FaRegComment } from "react-icons/fa6";
 import { HiOutlineHandThumbUp } from "react-icons/hi2";
 import TextBtn from "./TextBtn";
@@ -52,7 +51,7 @@ export default function SavedDraftMyArticles() {
                         <div className="flex-1 flex flex-col justify-between">
                             <div className="flex justify-between items-start gap-2">
                                 <h2 className="text-sm md:text-xl font-semibold text-gray-800 dark:text-gray-200 line-clamp-2">
-                                    2050's Ultimate Speed Machines: The Sports Cars of Tomorrow...
+                                    2050&apos;s Ultimate Speed Machines: The Sports Cars of Tomorrow...
                                 </h2>
                                 <span className="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">2d ago</span>
                             </div>
@@ -119,7 +118,7 @@ export default function SavedDraftMyArticles() {
                         <div className="flex-1 flex flex-col justify-between">
                             <div className="flex justify-between items-start gap-2">
                                 <h2 className="text-sm md:text-xl font-semibold text-gray-800 dark:text-gray-200 line-clamp-2">
-                                    2050's Ultimate Speed Machines: The Sports Cars of Tomorrow...
+                                    2050&apos;s Ultimate Speed Machines: The Sports Cars of Tomorrow...
                                 </h2>
                                 <span className="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">2d ago</span>
                             </div>
@@ -172,7 +171,7 @@ export default function SavedDraftMyArticles() {
                         <div className="flex-1 flex flex-col justify-between">
                             <div className="flex justify-between items-start gap-2">
                                 <h2 className="text-sm md:text-xl font-semibold text-gray-800 dark:text-gray-200 line-clamp-2">
-                                    2050's Ultimate Speed Machines: The Sports Cars of Tomorrow...
+                                    2050&apos;s Ultimate Speed Machines: The Sports Cars of Tomorrow...
                                 </h2>
                                 <span className="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap">2d ago</span>
                             </div>

@@ -201,7 +201,7 @@ export const CategoryList = () => {
                 </div>
             ) : (
                 <div className="text-center py-10 text-gray-500 dark:text-gray-400">
-                    No categories found matching "{searchTerm}"
+                    No categories found matching &quot;{searchTerm}&quot;
                 </div>
             )}
         </div>

@@ -1,7 +1,6 @@
 import IBlogPicks from "@/components/IblogPicks";
 import SuggestedTopics from "@/components/SuggestedTopics";
 import WhoToFollow from "@/components/WhoToFollow";
-import Image from "next/image";
 
 export default function RightSideBar() {
     return (

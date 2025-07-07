@@ -134,6 +134,8 @@ export default function About() {
                                             src={member.img}
                                             alt={member.name}
                                             className="w-full h-full object-cover"
+                                            width={24}
+                                            height={24}
                                         />
                                     </div>
                                     <h3 className="text-xl font-bold text-center text-white">{member.name}</h3>

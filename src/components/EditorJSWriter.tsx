@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import EditorJS from "@editorjs/editorjs";
-import Header from "@editorjs/header";
+import Header from '@editorjs/header';
 import List from "@editorjs/list";
 import ImageTool from "@editorjs/image";
 
 interface EditorJSWriterProps {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     data?: any;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     onChange?: (data: any) => void;
     readOnly?: boolean;
 }
@@ -48,8 +50,8 @@ const EditorJSWriter: React.FC<EditorJSWriterProps> = ({ data, onChange, readOnl
                 ejInstance.current = null;
             }
         };
-    }, [readOnly]);
-    
+    }, [data, onChange, readOnly]);
+
     return (
         <div className="w-full max-w-2xl mx-auto py-8">
             <input
@@ -63,7 +65,7 @@ const EditorJSWriter: React.FC<EditorJSWriterProps> = ({ data, onChange, readOnl
                 ref={holder}
                 className="input-block min-h-[400px] bg-transparent focus:outline-none "
             />
-            
+
         </div>
     );
 };

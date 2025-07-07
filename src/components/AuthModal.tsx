@@ -209,7 +209,7 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
               Confirm your email address
             </h4>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              We've sent a confirmation link to <span className="font-medium">{email}</span>.
+              We&apos;ve sent a confirmation link to <span className="font-medium">{email}</span>.
               Please check your inbox and click the link to verify your account.
             </p>
             <div className="pt-2">
@@ -371,7 +371,7 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
 
                 {currentView === "login" && (
                   <div className="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">
-                    Don't have an account?{" "}
+                    Don&apos;t have an account?{" "}
                     <button
                       type="button"
                       onClick={() => setCurrentView("register")}

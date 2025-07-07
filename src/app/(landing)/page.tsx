@@ -1,11 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Spotlight } from "@/components/ui/Spotlight";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Button } from "@/components/ui/Button";
-import ThemeToggleButton from "@/components/ThemeToggle";
 import { useState } from "react";
 import { AuthModal } from "@/components/AuthModal";
 import { ResetPasswordModal } from "@/components/PasswordReset";
@@ -52,7 +51,7 @@ export default function Home() {
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
                             Write, Inspire,
                         </span>{" "}
-                        and Share on the world's smartest blogging platform.
+                        and Share on the world&apos;s smartest blogging platform.
                     </h1>
 
                     <p className="mt-6 text-lg text-zinc-400 dark:text-zinc-300 max-w-xl mx-auto">
@@ -182,11 +181,13 @@ export default function Home() {
                                 className="group relative flex flex-col rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 bg-white dark:bg-transparent border border-gray-200 dark:border-gray-700 hover:-translate-y-1"
                             >
                                 <div className="relative h-48 w-full overflow-hidden">
-                                    <img
+                                    <Image
                                         src={article.image}
                                         alt={article.title}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                         loading="lazy"
+                                        width={24}
+                                        height={24}
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                                     <div className="absolute top-4 right-4 flex gap-2">
@@ -201,10 +202,12 @@ export default function Home() {
 
                                 <div className="p-5 flex-1 flex flex-col">
                                     <div className="flex items-center gap-3 mb-3">
-                                        <img
+                                        <Image
                                             src={article.author.avatar}
                                             alt={article.author.name}
                                             className="w-8 h-8 rounded-full object-cover"
+                                            width={24}
+                                            height={24}
                                         />
                                         <div>
                                             <p className="text-sm font-medium text-gray-900 dark:text-white">{article.author.name}</p>

@@ -1,7 +1,3 @@
-import SearchBar from '@/components/SearchBar';
-import ThemeToggleButton from '@/components/ThemeToggle';
-import Footer from '@/components/Footer';
-
 import NavBar from '@/components/NavBar';
 
 export default function ArticleLayout({

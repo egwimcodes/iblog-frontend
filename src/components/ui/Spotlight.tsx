@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils/getSlug";
 import { motion } from "framer-motion";
 
-export function Spotlight({ className, fill = "white" }: { className?: string; fill?: string }) {
+export function Spotlight({ className }: { className?: string; fill?: string }) {
     return (
         <motion.div
             initial={{ opacity: 0 }}

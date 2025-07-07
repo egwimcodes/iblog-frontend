@@ -1,6 +1,4 @@
 import SearchBar from '@/components/SearchBar';
-import ThemeToggleButton from '@/components/ThemeToggle';
-import Footer from '@/components/Footer';
 
 import NavBar from '@/components/NavBar';
 import RightSideBar from '@/components/RightSideBar';
@@ -9,14 +7,9 @@ import LeftSideBar from '@/components/LeftSideBar';
 type LayoutProps = {
 
   children: React.ReactNode;
-  leftSideBar?: boolean;
-  rightSideBar?: boolean;
 }
 export default function ArticleLayout({
   children,
-  leftSideBar = true,
-  rightSideBar = true,
-
 }: LayoutProps) {
 
   return (<>
@@ -28,7 +21,7 @@ export default function ArticleLayout({
         {/* Left Sidebar  */}
         <aside className="hidden md:block w-[18vw] lg:w-[16vw] xl:w-[14vw]">
           {/* <LeftSideBar /> */}
-          {leftSideBar && <LeftSideBar />}
+           <LeftSideBar />
         </aside>
 
         {/* Main Content */}
@@ -49,7 +42,7 @@ export default function ArticleLayout({
 
         {/* Right Sidebar */}
         <aside className="hidden md:block w-[18vw] lg:w-[16vw] xl:w-[14vw]">
-          {rightSideBar && <RightSideBar />}
+          <RightSideBar />
         </aside>
       </main>
     </div>

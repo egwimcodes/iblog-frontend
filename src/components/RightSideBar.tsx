@@ -1,4 +1,3 @@
-import Image from "next/image";
 import IBlogPicks from "./IblogPicks";
 import SuggestedTopics from "./SuggestedTopics";
 import WhoToFollow from "./WhoToFollow";

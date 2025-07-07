@@ -1,14 +1,6 @@
 import SearchBar from '@/components/SearchBar';
-import ThemeToggleButton from '@/components/ThemeToggle';
-import TopicsHeading from '@/components/TopicsHeading';
-import Footer from '@/components/Footer';
-
 import NavBar from '@/components/NavBar';
-import { articles } from '@/lib/data'
-import SkeletonCard from '@/components/Skeletons/SkeletonCard';
-import ArticleCard from '@/components/ArticleCard';
 import RightSideBar from '@/components/RightSideBar';
-import LeftSideBar from '@/components/LeftSideBar';
 
 export default function ArticleLayout({
   children,

@@ -1,16 +1,14 @@
 'use client'
 import Image from "next/image";
-import Link from "next/link";
 import { BiBookmarkAltPlus } from "react-icons/bi";
 import { HiOutlineHandThumbUp } from "react-icons/hi2";
 import { FaRegComment } from "react-icons/fa6";
-import { CiMenuKebab, CiSearch } from "react-icons/ci";
+import { CiMenuKebab } from "react-icons/ci";
 import { motion, easeInOut } from "framer-motion";
-import { ArticleData } from "@/lib/types";
+import { ArticleData } from "@/types/types";
 import GradientImageBorder from "@/components/GradientImageBorder";
 import OutlineBtn from "@/components/OutlineBtn";
 import { IoSendSharp } from "react-icons/io5";
-import TextBtn from "@/components/TextBtn";
 
 
 const cardVariants = {
@@ -25,9 +23,6 @@ const cardVariants = {
     },
 };
 
-interface ArticleCardDetailProps {
-    data: ArticleData;
-}
 export default function ArticleDetail({ article }: { article: ArticleData }) {
 
     return (<>
@@ -159,7 +154,7 @@ export default function ArticleDetail({ article }: { article: ArticleData }) {
 
                                                     {/* Post Title */}
                                                     <p className="text-sm md:text-base font-inter font-semibold  text-gray-500 dark:text-gray-400">
-                                                        You're absolutely right - these tools are mind-blowing. But hey, at Techlusion, we’ve already been building solutions with AutoGen, Reflex,  long before it was cool 😎.
+                                                        You&apos;re absolutely right - these tools are mind-blowing. But hey, at Techlusion, we’ve already been building solutions with AutoGen, Reflex,  long before it was cool 😎.
                                                     </p>
                                                     {/* Icons */}
                                                     <motion.div
@@ -169,7 +164,7 @@ export default function ArticleDetail({ article }: { article: ArticleData }) {
                                                         transition={{ delay: 0.5, duration: 0.4 }}
                                                     >
                                                         <div className="flex flex-row justify-evenly items-center space-x-2">
-                                                            
+
                                                             <div className="flex items-center space-x-1" title="Likes">
                                                                 <HiOutlineHandThumbUp className="w-5 h-5 text-brand dark:text-brand" />
                                                                 <span className="text-sm text-gray-500 dark:text-gray-400 font-poppins">{article.likes}</span>

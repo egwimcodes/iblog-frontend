@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import OutlineBtn from "./OutlineBtn";
 import TextBtn from "./TextBtn";
 

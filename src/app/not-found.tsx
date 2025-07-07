@@ -14,7 +14,7 @@ export default function NotFound() {
             </h1>
 
             <p className="text-gray-600 dark:text-gray-400 font-poppins mb-6 max-w-md">
-                Sorry, we couldn't find the page you were looking for. It might have been removed, renamed, or didn’t exist.
+                Sorry, we couldn&apos;t find the page you were looking for. It might have been removed, renamed, or didn’t exist.
             </p>
 
             <Link href="/" className="bg-brand text-white dark:text-black px-6 py-3 rounded-full font-medium hover:opacity-90 transition">

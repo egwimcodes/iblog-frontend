@@ -1,4 +1,3 @@
-import { ThemeProvider } from "next-themes";
 import Footer from "@/components/Footer";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 

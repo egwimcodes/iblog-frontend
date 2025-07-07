@@ -4,18 +4,18 @@ import { Poppins, Inter, Poltawski_Nowy } from "next/font/google";
 import "../styles/globals.css";
 import ThemeToggleButton from "@/components/ThemeToggle";
 
-export const poppins = Poppins({
+const poppins = Poppins({
   variable: '--font-poppins',
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
-export const inter = Inter({
+const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
 
-export const poltawskiNowy = Poltawski_Nowy({
+const poltawskiNowy = Poltawski_Nowy({
   variable: "--font-poltawskiNowy",
   subsets: ["latin"],
 });

@@ -138,7 +138,7 @@ export function ResetPasswordModal({
                                                 placeholder="you@example.com"
                                             />
                                             <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                                                We'll send you a link to reset your password
+                                                We&apos;ll send you a link to reset your password
                                             </p>
                                         </div>
 

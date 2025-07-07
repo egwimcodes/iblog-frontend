@@ -11,7 +11,7 @@
   "dependencies": {
     "@editorjs/editorjs": "^2.30.8",
     "@editorjs/header": "^2.8.8",
-    "@editorjs/image": "^2.10.2",
+    "@editorjs/image": "^2.10.3",
     "@editorjs/list": "^2.0.8",
     "@headlessui/react": "^2.2.4",
     "@tailwindcss/line-clamp": "^0.4.4",
@@ -23,7 +23,6 @@
     "framer-motion": "^12.19.1",
     "highlight.js": "^11.11.1",
     "lucide-react": "^0.525.0",
-    "next": "^15.3.4",
     "next-themes": "^0.4.6",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.0.0",
@@ -40,10 +39,13 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/uuid": "^10.0.0",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.8",
+    "@typescript-eslint/eslint-plugin": "^8.36.0",
+    "@typescript-eslint/parser": "^8.36.0",
+    "eslint": "^9.30.1",
+    "eslint-config-next": "^15.1.8",
+    "next": "^15.3.5",
     "postcss": "^8",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5"
+    "typescript": "^5.8.3"
   }
 }

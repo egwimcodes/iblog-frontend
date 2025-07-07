@@ -17,6 +17,8 @@ export default function GradientImageBorder({ backgroundImage }: GradientImageBo
                     className="object-cover"
                     sizes="100vw" // ✅ Optional: helps optimize loading
                     priority // ✅ Optional: if above the fold
+                    // width={24}
+                    // height={24}
                 />
             </div>
         </div>

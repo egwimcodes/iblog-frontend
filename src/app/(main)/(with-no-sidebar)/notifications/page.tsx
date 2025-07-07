@@ -1,7 +1,6 @@
 'use client';
 import { useState } from "react";
 import { FiBell, FiCheckCircle, FiInfo, FiAlertCircle, FiTrash2 } from "react-icons/fi";
-import OutlineBtn from "@/components/OutlineBtn";
 
 type Notification = {
     id: number;
