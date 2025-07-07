@@ -1,13 +1,12 @@
 'use client';
 
 import Link from "next/link";
+import Image from "next/image";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Button } from "@/components/ui/Button";
-import ThemeToggleButton from "@/components/ThemeToggle";
 import { FaRocket, FaLightbulb, FaUsers, FaHeart } from "react-icons/fa";
-import Layout  from "../layout";
 
 export default function About() {
     const aboutText = "IBLOG was born from a simple idea: blogging should be effortless yet powerful. We combine AI intelligence with human creativity to give you the best publishing experience on the web.";
@@ -131,7 +130,7 @@ export default function About() {
                                 <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-50 blur transition duration-500" />
                                 <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 p-6 overflow-hidden">
                                     <div className="w-24 h-24 rounded-full mx-auto mb-4 overflow-hidden border-2 border-white/20">
-                                        <img
+                                        <Image
                                             src={member.img}
                                             alt={member.name}
                                             className="w-full h-full object-cover"

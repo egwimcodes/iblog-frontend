@@ -2,37 +2,34 @@
 import Image from "next/image";
 import SearchBar from "./SearchBar";
 import OutlineBtn from "./OutlineBtn";
-import FillBtn from "./FillBtn";
 import TextBtn from "./TextBtn";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FiEdit, FiUser, FiSettings, FiLogOut } from "react-icons/fi";
 import { GoBell } from "react-icons/go";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
-function useOutsideClick(ref: any, callback: () => void) {
-    useEffect(() => {
-        function handleClickOutside(event: MouseEvent) {
-            if (ref.current && !ref.current.contains(event.target)) {
-                callback();
-            }
-        }
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, [ref, callback]);
-}
+// function useOutsideClick(ref: RefObject<HTMLElement>, callback: () => void) {
+//     useEffect(() => {
+//         function handleClickOutside(event: MouseEvent) {
+//             if (ref.current && !ref.current.contains(event.target as Node)) {
+//                 callback();
+//             }
+//         }
+//         document.addEventListener("mousedown", handleClickOutside);
+//         return () => document.removeEventListener("mousedown", handleClickOutside);
+//     }, [ref, callback]);
+// }
 
 export default function NavBar() {
     const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const [showLogoutModal, setShowLogoutModal] = useState<boolean>(false);
-    const menuRef = useRef(null);
-    const modalRef = useRef(null);
+    const menuRef = useRef<HTMLDivElement>(null);
+    const modalRef = useRef<HTMLDivElement>(null);
     const router = useRouter();
 
-    useOutsideClick(menuRef, () => setMenuOpen(false));
-    useOutsideClick(modalRef, () => setShowLogoutModal(false));
 
     const handleLogout = () => {
         // Show confirmation modal instead of immediate logout
