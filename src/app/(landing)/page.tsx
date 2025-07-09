@@ -9,6 +9,8 @@ import { useState } from "react";
 import { AuthModal } from "@/components/AuthModal";
 import { ResetPasswordModal } from "@/components/PasswordReset";
 import { articles } from "@/lib/data";
+import { motion } from "framer-motion";
+
 import { FaBolt, FaRobot, FaUserCircle, FaRocket, FaLightbulb, FaUsers } from "react-icons/fa";
 
 const features = [
@@ -47,13 +49,21 @@ export default function Home() {
 
                 {/* Hero Section */}
                 <section className="pt-[120px] md:pt-[140px] px-6 max-w-4xl mx-auto text-center relative z-10">
-                    <h1 className="text-4xl md:text-6xl font-extrabold leading-tight dark:text-white">
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
-                            Write, Inspire,
-                        </span>{" "}
-                        and Share on the world&apos;s smartest blogging platform.
-                    </h1>
 
+
+                    <motion.div
+                        className="px-6 max-w-4xl mx-auto text-center relative z-10"
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.1 }}
+                    >
+                        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight dark:text-white">
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+                                Write, Inspire,
+                            </span>{" "}
+                            and Share on the world&apos;s smartest blogging platform.
+                        </h1>
+                    </motion.div>
                     <p className="mt-6 text-lg text-zinc-400 dark:text-zinc-300 max-w-xl mx-auto">
                         IBLOG empowers creators with AI-enhanced tools, clean UI, and community rewards.
                     </p>

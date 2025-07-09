@@ -1,6 +1,5 @@
 'use client';
 
-import Link from "next/link";
 import Image from "next/image";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
@@ -43,21 +42,7 @@ export default function About() {
             <main className="relative min-h-screen w-full bg-background text-foreground overflow-hidden">
             
 
-                {/* Navbar */}
-                <nav className="w-full z-20 fixed top-0 left-0 backdrop-blur-md border-b border-border py-4 px-8 flex justify-between items-center">
-                    <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 bg-clip-text text-transparent">
-                        IBLOG
-                    </h1>
-                    <div className="space-x-4 hidden md:flex text-zinc-400 dark:text-zinc-300">
-                        <Link href="/"><span className="hover:underline">Home</span></Link>
-                        <Link href="/#features"><span className="hover:underline">Features</span></Link>
-                        <Link href="/#blogs"><span className="hover:underline">Blogs</span></Link>
-                        <Link href="/about"><span className="hover:underline text-purple-500">About</span></Link>
-                    </div>
-                    <Link href="/login">
-                        <Button variant="outline">Login</Button>
-                    </Link>
-                </nav>
+             
 
                 {/* Hero Section */}
                 <section className="pt-[120px] md:pt-[140px] px-6 max-w-6xl mx-auto text-center relative z-10">
