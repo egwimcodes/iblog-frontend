@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { useState, useRef } from 'react';
 import dynamic from "next/dynamic";
-import { savePost } from '@/services/api';
+import { savePost } from '@/lib/services/api';
 import { FiUpload } from 'react-icons/fi';
 import OutlineBtn from '@/components/OutlineBtn';
 import TextBtn from '@/components/TextBtn';

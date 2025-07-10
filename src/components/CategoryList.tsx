@@ -1,5 +1,5 @@
 'use client'
-import categories from "@/lib/data";
+import categories from "@/lib/data/category";
 import React, { useState } from "react";
 import Link from "next/link";
 import { CiSearch } from "react-icons/ci";

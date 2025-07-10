@@ -8,7 +8,7 @@ import { FaRegComment } from "react-icons/fa6";
 import { CiMenuKebab } from "react-icons/ci";
 import GradientImageBorder from "./GradientImageBorder";
 import { motion, easeInOut } from "framer-motion";
-import { ArticleData } from "@/types/types";
+import { ArticleData } from "@/lib/types/types";
 
 const cardVariants = {
     hidden: { opacity: 0, y: 30 },

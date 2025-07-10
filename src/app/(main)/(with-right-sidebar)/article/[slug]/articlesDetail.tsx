@@ -5,7 +5,7 @@ import { HiOutlineHandThumbUp } from "react-icons/hi2";
 import { FaRegComment } from "react-icons/fa6";
 import { CiMenuKebab } from "react-icons/ci";
 import { motion, easeInOut } from "framer-motion";
-import { ArticleData } from "@/types/types";
+import { ArticleData } from "@/lib/types/types";
 import GradientImageBorder from "@/components/GradientImageBorder";
 import OutlineBtn from "@/components/OutlineBtn";
 import { IoSendSharp } from "react-icons/io5";

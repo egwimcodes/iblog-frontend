@@ -8,31 +8,14 @@ import { Button } from "@/components/ui/Button";
 import { useState } from "react";
 import { AuthModal } from "@/components/AuthModal";
 import { ResetPasswordModal } from "@/components/PasswordReset";
-import { articles } from "@/lib/data";
 import { motion } from "framer-motion";
 
-import { FaBolt, FaRobot, FaUserCircle, FaRocket, FaLightbulb, FaUsers } from "react-icons/fa";
+import {FaRocket, FaLightbulb, FaUsers } from "react-icons/fa";
+import TypingHeroText from "@/components/landing-components/TypingHeroText";
+import { articles } from "@/lib/data/articles";
+import FeaturesGrid from "@/components/landing-components/FeaturesGrid";
+import { features } from "@/lib/data/features";
 
-const features = [
-    {
-        title: "AI Writer",
-        desc: "Generate blog ideas, outlines, and full posts with AI assistance.",
-        icon: <FaRobot className="text-3xl text-purple-500 group-hover:scale-110 group-hover:text-pink-500 transition-transform duration-300" />,
-        gradient: "from-purple-500 via-pink-400 to-purple-600"
-    },
-    {
-        title: "Custom Profiles",
-        desc: "Showcase your content and personality with personalized pages.",
-        icon: <FaUserCircle className="text-3xl text-pink-500 group-hover:scale-110 group-hover:text-purple-500 transition-transform duration-300" />,
-        gradient: "from-pink-500 via-purple-400 to-pink-600"
-    },
-    {
-        title: "Engagement Tools",
-        desc: "Real-time feedback, shares, highlights, and reactions.",
-        icon: <FaBolt className="text-3xl text-yellow-400 group-hover:scale-110 group-hover:text-pink-500 transition-transform duration-300" />,
-        gradient: "from-yellow-400 via-pink-400 to-purple-500"
-    },
-];
 
 export default function Home() {
     const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -53,9 +36,9 @@ export default function Home() {
 
                     <motion.div
                         className="px-6 max-w-4xl mx-auto text-center relative z-10"
-                        initial={{ opacity: 0, y: 40 }}
+                        initial={{ opacity: 0, y: -40 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6, delay: 0.1 }}
+                        transition={{ duration: 0.6, delay: 0.05 }}
                     >
                         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight dark:text-white">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
@@ -64,13 +47,27 @@ export default function Home() {
                             and Share on the world&apos;s smartest blogging platform.
                         </h1>
                     </motion.div>
-                    <p className="mt-6 text-lg text-zinc-400 dark:text-zinc-300 max-w-xl mx-auto">
+                    <motion.p
+                        className="mt-6 text-lg text-zinc-400 dark:text-zinc-300 max-w-xl mx-auto"
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.15 }}>
                         IBLOG empowers creators with AI-enhanced tools, clean UI, and community rewards.
-                    </p>
+                    </motion.p>
                     <div className="mt-8 flex justify-center gap-4">
-                        <Button variant="primary">Start Blogging</Button>
+                        <motion.div className=""
+                            initial={{ opacity: 0, x: -40 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}>
+                            <Button variant="primary">Start Blogging</Button>
+                        </motion.div>
                         <Link href={"/articles"}>
-                            <Button variant="outline">Explore Blogs</Button>
+                            <motion.div
+                                initial={{ opacity: 0, x: 40 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.6, delay: 0.2 }}>
+                                <Button variant="outline">Explore Blogs</Button>
+                            </motion.div>
                         </Link>
                     </div>
                 </section>
@@ -81,20 +78,15 @@ export default function Home() {
 
                     <div className="relative">
                         <h2 className="text-center mb-16 font-poppins font-bold text-4xl md:text-5xl dark:text-white">
-                            <span className="relative inline-block">
-                                <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 text-transparent bg-clip-text bg-300% animate-gradient">
-                                    Powerful features,
-                                </span>
-                                <span className="absolute -bottom-2 left-0 h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 rounded-full scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
-                            </span>
+                            <TypingHeroText />
                             <br />
                             <span className="text-xl md:text-2xl font-medium text-gray-500 dark:text-gray-400 mt-2 inline-block">
                                 Built for the modern blogger
                             </span>
                         </h2>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-                            {features.map((feat, idx) => (
+                            <FeaturesGrid features={features} />
+                            {/* {features.map((feat, idx) => (
                                 <div
                                     key={idx}
                                     className={`group relative min-h-[220px] rounded-3xl p-[2px] overflow-hidden bg-gradient-to-br ${feat.gradient} shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 before:absolute before:inset-0 before:rounded-3xl before:bg-gradient-to-br before:from-pink-400/30 before:via-purple-400/30 before:to-yellow-400/30 before:opacity-0 group-hover:before:opacity-40 before:blur-lg before:transition-opacity before:duration-500`}
@@ -116,9 +108,8 @@ export default function Home() {
                                         </p>
                                     </div>
                                 </div>
-                            ))}
+                            ))} */}
                         </div>
-                    </div>
                 </section>
 
                 {/* About Section */}
