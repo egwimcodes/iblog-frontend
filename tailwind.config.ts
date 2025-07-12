@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import typography from "@tailwindcss/typography";
 export default {
   darkMode: "class",
   content: [
@@ -47,7 +47,7 @@ export default {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [typography],
   animation: {
     floating: "floatUpDown 15s ease-in-out infinite",
   },
@@ -57,6 +57,21 @@ export default {
       "50%": { transform: "translateY(-10px)" },
     },
   },
+  safelist: [
+    // Add all possible gradient colors
+    "from-purple-500",
+    "via-pink-400",
+    "to-purple-600",
+    "from-pink-500",
+    "via-purple-400",
+    "to-pink-600",
+    "from-yellow-400",
+    "via-pink-400",
+    "to-purple-500",
+    "text-yellow-400", // Also safelist text colors if needed
+    "text-yellow-500",
+    // ... any other dynamically used colors
+  ],
 } satisfies Config;
 
 
