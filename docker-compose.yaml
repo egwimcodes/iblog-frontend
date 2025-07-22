@@ -1,12 +1,11 @@
 services:
   iblog-frontend-layout:
-    container_name: iblog_frontend
+    container_name: iblog-frontend
     build:
       context: .
       dockerfile: ./devops/Dockerfile
     ports:
       - "3000:3000"
-    image: iblog_frontend:latest
     restart: unless-stopped
     env_file:
       - .env
