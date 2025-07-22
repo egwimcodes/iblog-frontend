@@ -2,7 +2,7 @@
 import ArticleCard from '@/components/ArticleCard'
 import SkeletonCard from '@/components/Skeletons/SkeletonCard'
 import TopicsHeading from '@/components/TopicsHeading'
-import { articles } from '@/lib/data/category'
+import { articles } from '@/lib/data/articles';
 import { useState, useEffect } from "react";
 export default function Home() {
 

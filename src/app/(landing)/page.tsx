@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { BackgroundBeams } from "@/components/ui/background-beams";

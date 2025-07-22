@@ -1,0 +1,31 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Copy project to VPS
+        run: |
+          rsync -avz --delete -e "ssh -p ${{ secrets.VPS_PORT }}" ./ ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:~/dockerlized-apps/react-next-app/iblog-frontend/
+
+      - name: Restart Docker on VPS
+        run: |
+          ssh -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
+            cd ~/dockerlized-apps/react-next-app/iblog-frontend
+            docker compose down
+            docker compose up -d --build
+          EOF
