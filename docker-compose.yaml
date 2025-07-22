@@ -1,15 +1,16 @@
 services:
-  container_name: iblog-frontend
-  build:
-    context: .
-    dockerfile: ./devops/Dockerfile
-  ports:
-    - "3000:3000"
-  restart: unless-stopped
-  env_file:
-    - .env
-  networks:
-    - iblog_network
+  iblog-frontend:
+    container_name: iblog-frontend
+    build:
+      context: .
+      dockerfile: ./devops/Dockerfile
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - iblog_network
 
 networks:
   iblog_network:
