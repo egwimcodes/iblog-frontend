@@ -7,7 +7,7 @@ export default function TypingHeroText() {
         <span className="relative inline-block group">
             <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500 text-transparent bg-clip-text bg-300% animate-gradient">
                 <Typewriter
-                    words={['Powerful features,', 'Built for creators,', 'Powered by AI']}
+                    words={['Powerful features,', 'Built creators,', 'Powered by AI']}
                     loop={false}
                     cursor
                     cursorStyle="|"
