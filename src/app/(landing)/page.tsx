@@ -4,7 +4,7 @@ import { Spotlight } from "@/components/ui/Spotlight";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Button } from "@/components/ui/Button";
 import { useState } from "react";
-import { AuthModal } from "@/components/AuthModal";
+import { AuthModal } from "@/components/Auth/AuthModal";
 import { ResetPasswordModal } from "@/components/PasswordReset";
 import { motion } from "framer-motion";
 import FeaturesGrid from "@/components/landing-components/FeaturesGrid";

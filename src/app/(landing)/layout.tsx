@@ -9,7 +9,6 @@ export default function LandingLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <>
             <div className="relative min-h-screen w-full bg-background text-foreground overflow-hidden ">
                 <LandingNavbar />
                 <main className="mb-10">
@@ -18,7 +17,5 @@ export default function LandingLayout({
                 <Footer />
                 <BackgroundBeams />
             </div>
-
-        </>
     );
 }

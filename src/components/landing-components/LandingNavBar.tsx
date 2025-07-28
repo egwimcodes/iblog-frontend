@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
-import { AuthModal } from "@/components/AuthModal";
+import { AuthModal } from "@/components/Auth/AuthModal";
 import { ResetPasswordModal } from "@/components/PasswordReset";
 
 export function LandingNavbar() {

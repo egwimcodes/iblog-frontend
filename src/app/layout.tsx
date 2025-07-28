@@ -3,6 +3,7 @@ import { ThemeProvider } from "next-themes";
 import { Poppins, Inter, Poltawski_Nowy } from "next/font/google";
 import "../styles/globals.css";
 import ThemeToggleButton from "@/components/ThemeToggle";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -118,8 +119,9 @@ export default function RootLayout({
       <body className="antialiased min-h-dvh bg-background-light dark:bg-background-dark transition-colors duration-500 text-black">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <ThemeToggleButton />
-
-          {children}
+          <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}>
+            {children}
+            </GoogleOAuthProvider>
         </ThemeProvider>
       </body>
     </html>

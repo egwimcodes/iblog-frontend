@@ -3,7 +3,8 @@ import { useState, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { FcGoogle } from "react-icons/fc";
+import { GoogleSignIn } from "./GoogleLogin";
+// import { FcGoogle } from "react-icons/fc";
 
 type AuthModalProps = {
   isOpen: boolean;
@@ -259,7 +260,7 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
       default: return "Continue";
     }
   };
-
+  
   const renderSocialLogin = () => {
     if (currentView === "login" || currentView === "register") {
       return (
@@ -269,19 +270,24 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
             <span className="mx-4 text-gray-500 dark:text-gray-400 text-sm">OR</span>
             <div className="flex-grow border-t border-gray-300 dark:border-gray-700"></div>
           </div>
-
-          <Button
+          <GoogleSignIn />
+          {/* <Button
             variant="outline"
             className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
+            onClick={GoogleOneTap}
           >
             <FcGoogle className="h-5 w-5" />
             Continue with Google
-          </Button>
+          </Button> */}
         </>
       );
     }
     return null;
   };
+
+
+
+
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
@@ -334,8 +340,8 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
                 {message && (
                   <div
                     className={`mb-4 p-3 rounded-md ${message.type === "success"
-                        ? "bg-green-500/10 text-green-600 dark:text-green-400"
-                        : "bg-red-500/10 text-red-600 dark:text-red-400"
+                      ? "bg-green-500/10 text-green-600 dark:text-green-400"
+                      : "bg-red-500/10 text-red-600 dark:text-red-400"
                       }`}
                   >
                     {message.text}
