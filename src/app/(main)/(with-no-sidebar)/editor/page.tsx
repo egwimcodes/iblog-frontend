@@ -2,7 +2,6 @@
 import Image from 'next/image';
 import { useState, useRef } from 'react';
 import dynamic from "next/dynamic";
-import { savePost } from '@/lib/services/api';
 import { FiUpload } from 'react-icons/fi';
 import OutlineBtn from '@/components/OutlineBtn';
 import TextBtn from '@/components/TextBtn';
@@ -40,7 +39,7 @@ export default function CreatePostPage() {
     const [slug] = useState('');
     const [metaDescription, setMetaDescription] = useState('');
     const [status] = useState('draft');
-    const [postId, setPostId] = useState<string | undefined>();
+    const [postId] = useState<string | undefined>();
     const [editorData, setEditorData] = useState<EditorJSData>({ blocks: [] });
 
     const [featuredImage, setFeaturedImage] = useState<File | null>(null);
@@ -65,9 +64,10 @@ export default function CreatePostPage() {
                 status,
                 featuredImage
             };
+            console.log(postData)
 
-            const savedPost = await savePost(postData);
-            setPostId(savedPost.id);
+            // const savedPost = await savePost(postData);
+            // setPostId(savedPost.id);
             setSaveStatus('success');
         } catch (error) {
             console.error('Save failed:', error);
