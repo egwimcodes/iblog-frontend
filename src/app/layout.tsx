@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Poppins, Inter, Poltawski_Nowy } from "next/font/google";
 import "../styles/globals.css";
-import ThemeToggleButton from "@/components/ThemeToggle";
+import ThemeToggleButton from "@/components/ui/ThemeToggle";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import { ToastContainer } from "react-toastify";
+import ReduxProvider from "@/lib/redux/ReduxProvider";
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -92,6 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+
     <html
       lang="en"
       className={`${poppins.variable} ${inter.variable} ${poltawskiNowy.variable}`}
@@ -117,12 +120,15 @@ export default function RootLayout({
         </script>
       </head>
       <body className="antialiased min-h-dvh bg-background-light dark:bg-background-dark transition-colors duration-500 text-black">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <ThemeToggleButton />
-          <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}>
-            {children}
+        <ReduxProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <ThemeToggleButton />
+            <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}>
+              <ToastContainer />
+              {children}
             </GoogleOAuthProvider>
-        </ThemeProvider>
+          </ThemeProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

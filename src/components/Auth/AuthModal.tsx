@@ -4,7 +4,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { GoogleSignIn } from "./GoogleLogin";
-// import { FcGoogle } from "react-icons/fc";
+import GoogleLoginButton from "./GoogleLoginButton";
+
 
 type AuthModalProps = {
   isOpen: boolean;
@@ -20,6 +21,7 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
   const [interest, setInterest] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
+
 
   const interests = [
     "Programmer",
@@ -260,7 +262,8 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
       default: return "Continue";
     }
   };
-  
+
+
   const renderSocialLogin = () => {
     if (currentView === "login" || currentView === "register") {
       return (
@@ -270,7 +273,8 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
             <span className="mx-4 text-gray-500 dark:text-gray-400 text-sm">OR</span>
             <div className="flex-grow border-t border-gray-300 dark:border-gray-700"></div>
           </div>
-          <GoogleSignIn />
+          
+          <GoogleLoginButton />
           {/* <Button
             variant="outline"
             className="w-full flex items-center justify-center gap-2 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"

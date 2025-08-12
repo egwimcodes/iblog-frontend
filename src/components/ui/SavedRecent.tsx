@@ -2,7 +2,7 @@
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { FaBookmark, FaClock } from "react-icons/fa";
-import SavedRecentSkeleton from "./Skeletons/SavedRecentSkeleton";
+import SavedRecentSkeleton from "../skeletons/SavedRecentSkeleton";
 
 export default function SavedRecent() {
     const [selected, setSelected] = useState('Saved');

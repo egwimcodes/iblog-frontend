@@ -3,9 +3,9 @@ import Link from "next/link";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Button } from "@/components/ui/Button";
-import { useState } from "react";
-import { AuthModal } from "@/components/Auth/AuthModal";
-import { ResetPasswordModal } from "@/components/PasswordReset";
+import { useEffect, useState } from "react";
+import { AuthModal } from "@/components/auth/AuthModal";
+import { ResetPasswordModal } from "@/components/ui/PasswordReset";
 import { motion } from "framer-motion";
 import FeaturesGrid from "@/components/landing-components/FeaturesGrid";
 import { features } from "@/lib/data/features";
@@ -17,6 +17,14 @@ export default function Home() {
     const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
     const [authModalView, setAuthModalView] = useState<"login" | "register" | "reset">("login");
 
+    useEffect(() => {
+        const hash = new URLSearchParams(window.location.hash.substring(1));
+        const idToken = hash.get("id_token");
+        if (idToken && window.opener) {
+            window.opener.postMessage({ id_token: idToken }, window.location.origin);
+            window.close();
+        }
+    }, []);
     return (
         <>
             <main className="relative min-h-screen w-full bg-background text-foreground overflow-hidden">

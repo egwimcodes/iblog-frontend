@@ -1,9 +1,9 @@
 "use client";
-import ArticleCard from '@/components/ArticleCard'
-import SkeletonCard from '@/components/Skeletons/SkeletonCard'
-import TopicsHeading from '@/components/TopicsHeading'
+import ArticleCard from '@/components/ui/ArticleCard'
+import SkeletonCard from '@/components/skeletons/SkeletonCard'
 import { articles } from '@/lib/data/articles';
 import { useState, useEffect } from "react";
+import TopicsHeading from '@/components/ui/TopicsHeading';
 export default function Home() {
 
   const [loading, setLoading] = useState(true);

@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import TextBtn from "./TextBtn";
-import IblogPicksSkeleton from "./Skeletons/IblogPicksSkeleton";
+import IblogPicksSkeleton from "../skeletons/IblogPicksSkeleton";
 
 export default function IBlogPicks() {
     const [loading, setLoading] = useState(true);
