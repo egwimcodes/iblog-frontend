@@ -69,7 +69,7 @@ export default function GoogleLoginButton() {
     const startLogin = () => {
         dispatch(showLoader());
         const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!;
-        const redirectUri = `${window.location.origin}/google-popup`;
+        const redirectUri = `${window.location.origin}/google-popup/`;
         const nonce = crypto.randomUUID();
 
         const authUrl =
@@ -82,7 +82,7 @@ export default function GoogleLoginButton() {
                 nonce,
             });
 
-        popupRef.current = window.open(authUrl, "googleLogin", "width=500,height=600");
+        // popupRef.current = window.open(authUrl, "googleLogin", "width=500,height=600");
 
         popupCheckIntervalRef.current = setInterval(() => {
             if (!popupRef.current || popupRef.current.closed) {
