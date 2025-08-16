@@ -5,7 +5,7 @@ import "../styles/globals.css";
 import ThemeToggleButton from "@/components/ui/ThemeToggle";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { ToastContainer } from "react-toastify";
-import ReduxProvider from "@/lib/redux/ReduxProvider";
+import ReduxProvider from "@/lib/redux/providers/ReduxProvider";
 
 const poppins = Poppins({
   variable: '--font-poppins',

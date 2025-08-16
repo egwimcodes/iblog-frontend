@@ -1,4 +1,4 @@
-import NavBar from '@/components/NavBar';
+import NavBar from "@/components/ui/NavBar";
 
 export default function ArticleLayout({
   children,

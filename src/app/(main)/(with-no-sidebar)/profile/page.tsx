@@ -3,7 +3,7 @@ import { FiEdit, FiInstagram } from "react-icons/fi";
 import { SlSocialFacebook } from "react-icons/sl";
 import { TbPoint } from "react-icons/tb";
 import Image from "next/image";
-import SavedDraftMyArticles from "@/components/SavedDraftMyArticles";
+import SavedDraftMyArticles from "@/components/ui/SavedDraftMyArticles";
 
 export default function ProfilePage() {
     return (

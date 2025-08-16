@@ -8,6 +8,8 @@ import { useRouter } from "next/navigation";
 import { FiEdit, FiUser, FiSettings, FiLogOut } from "react-icons/fi";
 import { GoBell } from "react-icons/go";
 import { useState, useRef } from "react";
+import { useAppDispatch, useAppSelector } from "@/lib/redux/redux-hooks";
+import { clearUser } from "@/lib/redux/slices/accountSlice";
 
 // function useOutsideClick(ref: RefObject<HTMLElement>, callback: () => void) {
 //     useEffect(() => {
@@ -22,26 +24,28 @@ import { useState, useRef } from "react";
 // }
 
 export default function NavBar() {
-    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
     const [showLogoutModal, setShowLogoutModal] = useState<boolean>(false);
     const menuRef = useRef<HTMLDivElement>(null);
     const modalRef = useRef<HTMLDivElement>(null);
     const router = useRouter();
+    const dispatch = useAppDispatch()
+    const {isAuthenticated }= useAppSelector((state) => state.user);
 
 
     const handleLogout = () => {
         // Show confirmation modal instead of immediate logout
         setShowLogoutModal(true);
         setMenuOpen(false);
+        dispatch(clearUser());
+
     };
 
     const confirmLogout = () => {
         setIsLoading(true);
         // Add actual logout logic here (clear tokens, etc.)
         setTimeout(() => {
-            setIsLoggedIn(false);
             setIsLoading(false);
             setShowLogoutModal(false);
             router.push("/articles");
@@ -77,7 +81,7 @@ export default function NavBar() {
                     </div>
 
                     {/* Right Side Buttons */}
-                    {isLoggedIn ? (
+                    {isAuthenticated ? (
                         <div className="flex items-center space-x-4">
                             <button className="flex items-center" aria-label="Create post" onClick={() => router.push("/editor")}>
                                 <FiEdit className="mx-2 w-5 h-5 text-brand" />
