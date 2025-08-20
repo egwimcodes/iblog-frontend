@@ -48,7 +48,7 @@ export default function NavBar() {
         setTimeout(() => {
             setIsLoading(false);
             setShowLogoutModal(false);
-            router.push("/articles");
+            router.push("/");
         }, 1000);
     };
 

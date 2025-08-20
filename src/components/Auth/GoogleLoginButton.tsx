@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useAppDispatch } from "@/lib/redux/redux-hooks";
 import { hideLoader, showLoader } from "@/lib/redux/slices/uiSlice";
 import { toast } from "react-toastify";
@@ -27,9 +27,10 @@ export default function GoogleLoginButton() {
             }
 
             if (id_token) {
+                // console.log("✅ Token:", id_token);
                 try {
                     const res = await FinalizeGoogleLogin({ token: id_token });
-                    console.log("✅ FinalizeGoogleLogin:", res);
+                    // console.log("✅ FinalizeGoogleLogin:", res);
                     dispatch(
                         setUser({
                             profile: res.user,
@@ -89,8 +90,23 @@ export default function GoogleLoginButton() {
     };
 
     return (
-        <button onClick={startLogin} className="btn-primary">
-            Sign in with Google
+        <button onClick={startLogin} className="w-full">
+            <div className="p-[1.5px] rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-purple-600 overflow-hidden">
+                <div className="flex items-center justify-center gap-2 bg-white dark:bg-background-dark px-6 py-[7px] rounded-full">
+                    <Image
+                        src="/images/google-logo.svg"
+                        alt="Google"
+                        className="w-5 h-5"
+                        width={24}
+                        height={24}
+                    />
+                    <span className="text-sm font-semibold text-gray-700 dark:text-gray-200">
+                        Continue with Google
+                    </span>
+                </div>
+            </div>
         </button>
     );
+
+
 }
