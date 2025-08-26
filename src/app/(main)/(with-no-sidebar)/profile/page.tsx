@@ -46,7 +46,7 @@ export default function ProfilePage() {
 
                 {/* User Info */}
                 <div className="w-full flex flex-col items-center  space-y-2 text-center">
-                    <h2 className="text-base font-semibold font-poppins">{profile?.first_name} {profile?.last_name }</h2>
+                    <h2 className="text-base font-semibold font-poppins">{profile?.first_name ?? "Guest"} {profile?.last_name ?? ""}</h2>
                     <h3 className="text-sm text-gray-500 dark:text-gray-400 font-poppins truncate">
                         Financial business expert
                     </h3>
