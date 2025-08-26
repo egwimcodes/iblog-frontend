@@ -7,7 +7,7 @@ import { CiMenuKebab } from "react-icons/ci";
 import { motion, easeInOut } from "framer-motion";
 import { ArticleData } from "@/lib/types/types";
 import { IoSendSharp } from "react-icons/io5";
-import GradientImageBorder from "@/components/(main)/articles/GradientImageBorder";
+import GradientImageBorder from "@/components/main/articles/GradientImageBorder";
 import OutlineBtn from "@/components/global/OutlineBtn";
 
 

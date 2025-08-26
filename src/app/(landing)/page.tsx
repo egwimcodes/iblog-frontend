@@ -4,13 +4,13 @@ import { Spotlight } from "@/components/global/Spotlight";
 import { BackgroundBeams } from "@/components/landing/background-beams";
 import { Button } from "@/components/global/Button";
 import { useEffect, useState } from "react";
-import { AuthModal } from "@/components/auth/AuthModal";
-import { ResetPasswordModal } from "@/components/auth/password/PasswordReset";
 import { motion } from "framer-motion";
 import FeaturesGrid from "@/components/landing/FeaturesGrid";
 import { features } from "@/lib/data/features";
 import AboutSection from "@/components/landing/AboutSection";
 import BlogsScetion from "@/components/landing/BlogsScetion";
+import { ResetPasswordModal } from "@/components/auth/password/PasswordReset";
+import { AuthModal } from "@/components/auth/AuthModal";
 
 
 export default function Home() {

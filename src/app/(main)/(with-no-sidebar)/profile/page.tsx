@@ -4,7 +4,7 @@ import { FiEdit, FiInstagram } from "react-icons/fi";
 import { SlSocialFacebook } from "react-icons/sl";
 import { TbPoint } from "react-icons/tb";
 import Image from "next/image";
-import SavedDraftMyArticles from "@/components/(main)/profile/SavedDraftMyArticles";
+import SavedDraftMyArticles from "@/components/main/profile/SavedDraftMyArticles";
 import { useUser } from "@/lib/redux/store/account/hooks";
 
 export default function ProfilePage() {

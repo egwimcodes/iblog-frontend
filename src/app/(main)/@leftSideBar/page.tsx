@@ -4,7 +4,7 @@ import { TbPoint } from "react-icons/tb";
 import { SlSocialFacebook } from "react-icons/sl";
 import { FiInstagram } from "react-icons/fi";
 import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
-import SavedRecent from "@/components/(main)/articles/SavedRecent";
+import SavedRecent from "@/components/main/articles/SavedRecent";
 
 export default function LeftSideBar() {
     return (

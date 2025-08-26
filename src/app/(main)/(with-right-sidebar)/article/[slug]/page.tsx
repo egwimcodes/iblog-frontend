@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
 import ArticleDetail from "./articlesDetail";
 import { getArticleBySlug } from "@/lib/utils/getSlug";
-import TopicsHeading from "@/components/(main)/articles/TopicsHeading";
+import TopicsHeading from "@/components/main/articles/TopicsHeading";
 
 
-export type paramsType = Promise<{slug: string}>
-export default async function ArticleDetailPage(props:{params:paramsType}
+export type paramsType = Promise<{ slug: string }>
+export default async function ArticleDetailPage(props: { params: paramsType }
 ) {
   const { slug } = await props.params;
   const article = await getArticleBySlug(slug);

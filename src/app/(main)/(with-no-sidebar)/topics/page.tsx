@@ -1,13 +1,13 @@
-import CategoryList from "@/components/(main)/articles/CategoryList";
-import TopicsHeading from "@/components/(main)/articles/TopicsHeading";
+import CategoryList from "@/components/main/articles/CategoryList";
+import TopicsHeading from "@/components/main/articles/TopicsHeading";
 
 export default function SearchTopics() {
     return (<>
-     {/* Topics Heading */}
-          <div className=" mb-4">
+        {/* Topics Heading */}
+        <div className=" mb-4">
             <TopicsHeading />
-          </div>
-    
+        </div>
+
         <div className="search-topics w-full flex flex-col space-y-4">
             <div className="heading flex flex-col items-center my-10">
                 <h1 className="title text-3xl text-neutral-900 dark:text-white font-inter font-bold hover:text-purple-600 transition-colors duration-300 cursor-pointer">

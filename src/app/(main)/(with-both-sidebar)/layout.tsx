@@ -1,8 +1,8 @@
-import SearchBar from '@/components/(main)/articles/SearchBar';
+import SearchBar from '@/components/main/articles/SearchBar';
 
 import NavBar from '@/components/global/NavBar';
-import RightSideBar from '@/components/(main)/RightSideBar';
-import LeftSideBar from '@/components/(main)/LeftSideBar';
+import RightSideBar from '@/components/main/RightSideBar';
+import LeftSideBar from '@/components/main/LeftSideBar';
 
 type LayoutProps = {
 

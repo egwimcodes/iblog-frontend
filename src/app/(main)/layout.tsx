@@ -1,4 +1,4 @@
-import Footer from "@/components/(main)/Footer";
+import Footer from "@/components/main/Footer";
 import { BackgroundBeams } from "@/components/landing/background-beams";
 
 

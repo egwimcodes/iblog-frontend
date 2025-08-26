@@ -30,7 +30,7 @@ interface SavePostParams {
 
 // Dynamically import EditorJSWriter with SSR disabled
 const EditorJSWriter = dynamic(
-    () => import("@/components/(main)/editors/EditorJSWriter"),
+    () => import("@/components/main/editors/EditorJSWriter"),
     { ssr: false }
 );
 

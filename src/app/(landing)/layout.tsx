@@ -1,7 +1,7 @@
 "use client"
 import { BackgroundBeams } from "@/components/landing/background-beams";
 import { LandingNavbar } from "@/components/landing/LandingNavBar";
-import Footer from "@/components/(main)/Footer";
+import Footer from "@/components/main/Footer";
 import { useAppSelector } from "@/lib/redux/store/store-hooks";
 import BallsLoader from "@/components/global/BallsLoader";
 

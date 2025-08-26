@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Spotlight } from "@/components/global/Spotlight";
-import { TextGenerateEffect } from "@/components/(main)/editors/text-generate-effect";
+import { TextGenerateEffect } from "@/components/main/editors/text-generate-effect";
 import { BackgroundBeams } from "@/components/landing/background-beams";
 import { Button } from "@/components/global/Button";
 import { FaRocket, FaLightbulb, FaUsers, FaHeart } from "react-icons/fa";

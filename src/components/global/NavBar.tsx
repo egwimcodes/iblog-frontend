@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import SearchBar from "../(main)/articles/SearchBar";
+import SearchBar from "../main/articles/SearchBar";
 import OutlineBtn from "./OutlineBtn";
 import TextBtn from "./TextBtn";
 import Link from "next/link";
