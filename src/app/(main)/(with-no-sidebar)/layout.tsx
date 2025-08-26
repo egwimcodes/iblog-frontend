@@ -1,4 +1,4 @@
-import NavBar from "@/components/ui/NavBar";
+import NavBar from "@/components/global/NavBar";
 
 export default function ArticleLayout({
   children,
@@ -6,7 +6,7 @@ export default function ArticleLayout({
 
   return (<>
     <div className="min-h-screen text-gray-800 dark:text-white">
-    
+
       <NavBar />
 
       <main className="flex flex-col md:flex-row max-w-screen-xl mx-auto px-4 md:px-6 lg:px-12">

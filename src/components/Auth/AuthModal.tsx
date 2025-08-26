@@ -2,7 +2,7 @@
 import { useState, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { Eye, EyeOff, X } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/global/Button";
 import GoogleLoginButton from "./GoogleLoginButton";
 
 
@@ -193,7 +193,7 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
             </div>
           </>
         );
-      
+
       case "interests":
         return (
           <div className="space-y-4">
@@ -412,7 +412,7 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
                   )}
                 </form>
 
-                  {renderSocialLogin()}
+                {renderSocialLogin()}
 
                 {currentView === "login" && (
                   <div className="mt-4 text-center text-sm text-gray-600 dark:text-gray-400">

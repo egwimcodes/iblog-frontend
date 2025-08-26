@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Poppins, Inter, Poltawski_Nowy } from "next/font/google";
 import "../styles/globals.css";
-import ThemeToggleButton from "@/components/ui/ThemeToggle";
+import ThemeToggleButton from "@/components/global/ThemeToggle";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { ToastContainer } from "react-toastify";
-import ReduxProvider from "@/lib/redux/providers/ReduxProvider";
+import ReduxProvider from "@/lib/redux/store/providers/ReduxProvider";
 
 const poppins = Poppins({
   variable: '--font-poppins',

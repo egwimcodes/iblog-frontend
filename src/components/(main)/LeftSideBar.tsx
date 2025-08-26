@@ -1,5 +1,5 @@
+import SavedRecent from "./articles/SavedRecent";
 
-import SavedRecent from "./SavedRecent";
 
 export default function LeftSideBar() {
     return (

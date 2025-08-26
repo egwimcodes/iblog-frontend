@@ -1,6 +1,6 @@
-import IBlogPicks from "./IblogPicks";
-import SuggestedTopics from "./SuggestedTopics";
-import WhoToFollow from "./WhoToFollow";
+import IBlogPicks from "./articles/IblogPicks";
+import SuggestedTopics from "./articles/SuggestedTopics";
+import WhoToFollow from "./articles/WhoToFollow";
 
 export default function RightSideBar() {
     return (

@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import ArticleDetail from "./articlesDetail";
 import { getArticleBySlug } from "@/lib/utils/getSlug";
-import TopicsHeading from "@/components/TopicsHeading";
+import TopicsHeading from "@/components/(main)/articles/TopicsHeading";
 
 
 export type paramsType = Promise<{slug: string}>

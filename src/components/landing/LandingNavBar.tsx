@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/global/Button";
 import { AuthModal } from "@/components/auth/AuthModal";
-import { ResetPasswordModal } from "../ui/PasswordReset";
+import { ResetPasswordModal } from "../auth/password/PasswordReset";
 
 export function LandingNavbar() {
     const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);

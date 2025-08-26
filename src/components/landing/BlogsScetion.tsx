@@ -1,5 +1,5 @@
 import { articles } from "@/lib/data/articles";
-import { Button } from "../ui/Button";
+import { Button } from "../global/Button";
 import Image from "next/image";
 
 

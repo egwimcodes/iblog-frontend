@@ -1,16 +1,16 @@
 "use client";
 import Link from "next/link";
-import { Spotlight } from "@/components/ui/Spotlight";
-import { BackgroundBeams } from "@/components/ui/background-beams";
-import { Button } from "@/components/ui/Button";
+import { Spotlight } from "@/components/global/Spotlight";
+import { BackgroundBeams } from "@/components/landing/background-beams";
+import { Button } from "@/components/global/Button";
 import { useEffect, useState } from "react";
 import { AuthModal } from "@/components/auth/AuthModal";
-import { ResetPasswordModal } from "@/components/ui/PasswordReset";
+import { ResetPasswordModal } from "@/components/auth/password/PasswordReset";
 import { motion } from "framer-motion";
-import FeaturesGrid from "@/components/landing-components/FeaturesGrid";
+import FeaturesGrid from "@/components/landing/FeaturesGrid";
 import { features } from "@/lib/data/features";
-import AboutSection from "@/components/landing-components/AboutSection";
-import BlogsScetion from "@/components/landing-components/BlogsScetion";
+import AboutSection from "@/components/landing/AboutSection";
+import BlogsScetion from "@/components/landing/BlogsScetion";
 
 
 export default function Home() {

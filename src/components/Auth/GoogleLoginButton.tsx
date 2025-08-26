@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useAppDispatch } from "@/lib/redux/redux-hooks";
-import { hideLoader, showLoader } from "@/lib/redux/slices/uiSlice";
+import { useAppDispatch } from "@/lib/redux/store/store-hooks";
+import { hideLoader, showLoader } from "@/lib/redux/store/ui/uiSlice";
 import { toast } from "react-toastify";
 import { useCallback, useEffect, useRef } from "react";
 import { FinalizeGoogleLogin } from "@/lib/api/fetch-utils";
-import { setUser } from "@/lib/redux/slices/accountSlice";
+import { setUser } from "@/lib/redux/store/account/slice";
 import { useRouter } from "next/navigation";
 
 export default function GoogleLoginButton() {
@@ -71,6 +71,7 @@ export default function GoogleLoginButton() {
                 response_type: "id_token",
                 scope: "openid email profile",
                 nonce,
+                prompt: "select_account",
             });
 
         popupRef.current = window.open(

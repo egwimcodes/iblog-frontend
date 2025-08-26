@@ -1,5 +1,5 @@
-import Footer from "@/components/ui/Footer";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+import Footer from "@/components/(main)/Footer";
+import { BackgroundBeams } from "@/components/landing/background-beams";
 
 
 // export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import uiReducer from "../slices/uiSlice";
-import userReducer from "../slices/accountSlice"
+import uiReducer from "./ui/uiSlice";
+import userReducer from "./account/slice";
 export const makeStore = () => {
   return configureStore({
     reducer: {

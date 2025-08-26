@@ -1,5 +1,6 @@
-import CategoryList from "@/components/CategoryList";
-import TopicsHeading from "@/components/TopicsHeading";
+import CategoryList from "@/components/(main)/articles/CategoryList";
+import TopicsHeading from "@/components/(main)/articles/TopicsHeading";
+
 export default function SearchTopics() {
     return (<>
      {/* Topics Heading */}

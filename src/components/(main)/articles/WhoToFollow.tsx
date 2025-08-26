@@ -1,6 +1,6 @@
 import Image from "next/image";
-import TextBtn from "./TextBtn";
-import OutlineBtn from "./OutlineBtn";
+import TextBtn from "../../global/TextBtn";
+import OutlineBtn from "../../global/OutlineBtn";
 
 export default function WhoToFollow() {
     return (
@@ -22,15 +22,15 @@ export default function WhoToFollow() {
                                 <div className="flex items-center justify-between ">
                                     <div className="flex-shrink-0 mr-1">
 
-                                    <div className="avatar w-8 h-8 rounded-full overflow-hidden">
-                                        <Image
-                                            src="/images/avatar1.jpg"
-                                            alt="Author avatar"
+                                        <div className="avatar w-8 h-8 rounded-full overflow-hidden">
+                                            <Image
+                                                src="/images/avatar1.jpg"
+                                                alt="Author avatar"
                                                 width={24}
                                                 height={24}
                                                 className="w-full h-full object-cover"
-                                        />
-                                    </div>
+                                            />
+                                        </div>
                                     </div>
                                     <div className="h-10 w-[78%] flex flex-col items-start justify-between">
                                         <div className="flex items-center justify-between w-full">

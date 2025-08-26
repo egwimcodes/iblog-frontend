@@ -1,8 +1,8 @@
 'use client'
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import TextBtn from "./TextBtn";
-import IblogPicksSkeleton from "../skeletons/IblogPicksSkeleton";
+import IblogPicksSkeleton from "@/components/components-skeletons/IblogPicksSkeleton";
+import TextBtn from "@/components/global/TextBtn";
 
 export default function IBlogPicks() {
     const [loading, setLoading] = useState(true);

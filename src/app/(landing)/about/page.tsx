@@ -1,10 +1,10 @@
 'use client';
 
 import Image from "next/image";
-import { Spotlight } from "@/components/ui/Spotlight";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { BackgroundBeams } from "@/components/ui/background-beams";
-import { Button } from "@/components/ui/Button";
+import { Spotlight } from "@/components/global/Spotlight";
+import { TextGenerateEffect } from "@/components/(main)/editors/text-generate-effect";
+import { BackgroundBeams } from "@/components/landing/background-beams";
+import { Button } from "@/components/global/Button";
 import { FaRocket, FaLightbulb, FaUsers, FaHeart } from "react-icons/fa";
 
 export default function About() {
@@ -40,9 +40,9 @@ export default function About() {
     return (
         <>
             <main className="relative min-h-screen w-full bg-background text-foreground overflow-hidden">
-            
 
-             
+
+
 
                 {/* Hero Section */}
                 <section className="pt-[120px] md:pt-[140px] px-6 max-w-6xl mx-auto text-center relative z-10">
@@ -73,7 +73,7 @@ export default function About() {
                                 <div className="text-2xl font-bold text-zinc-800 dark:text-white">{stat.value}</div>
                                 <div className="text-sm text-zinc-600 dark:text-zinc-300">{stat.label}</div>
                             </div>
-                          
+
                         ))}
                     </div>
                 </section>

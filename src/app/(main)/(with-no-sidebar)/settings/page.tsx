@@ -1,5 +1,5 @@
 'use client';
-import OutlineBtn from "@/components/OutlineBtn";
+import OutlineBtn from "@/components/global/OutlineBtn";
 import Image from "next/image";
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";

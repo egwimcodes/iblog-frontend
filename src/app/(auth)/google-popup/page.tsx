@@ -1,8 +1,8 @@
 "use client";
 import { useEffect } from "react";
 import Image from "next/image";
-import { Spotlight } from "@/components/ui/Spotlight";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+import { Spotlight } from "@/components/global/Spotlight";
+import { BackgroundBeams } from "@/components/landing/background-beams";
 import { motion } from "framer-motion";
 import { FiUser, FiLock, FiMail, FiDatabase } from "react-icons/fi";
 

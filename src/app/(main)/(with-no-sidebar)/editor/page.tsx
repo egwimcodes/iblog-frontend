@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { useState, useRef } from 'react';
 import dynamic from "next/dynamic";
 import { FiUpload } from 'react-icons/fi';
-import OutlineBtn from '@/components/OutlineBtn';
-import TextBtn from '@/components/TextBtn';
+import TextBtn from '@/components/global/TextBtn';
+import OutlineBtn from '@/components/global/OutlineBtn';
 
 // Define types for EditorJS data
 interface EditorJSBlock {
@@ -30,7 +30,7 @@ interface SavePostParams {
 
 // Dynamically import EditorJSWriter with SSR disabled
 const EditorJSWriter = dynamic(
-    () => import("@/components/EditorJSWriter"),
+    () => import("@/components/(main)/editors/EditorJSWriter"),
     { ssr: false }
 );
 

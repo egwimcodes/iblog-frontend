@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import OutlineBtn from "./OutlineBtn";
 import { BiBookmarkAltPlus } from "react-icons/bi";
 import { HiOutlineHandThumbUp } from "react-icons/hi2";
 import { FaRegComment } from "react-icons/fa6";
 import { CiMenuKebab } from "react-icons/ci";
-import GradientImageBorder from "./GradientImageBorder";
 import { motion, easeInOut } from "framer-motion";
 import { ArticleData } from "@/lib/types/types";
+import GradientImageBorder from "./GradientImageBorder";
+import OutlineBtn from "@/components/global/OutlineBtn";
 
 const cardVariants = {
     hidden: { opacity: 0, y: 30 },

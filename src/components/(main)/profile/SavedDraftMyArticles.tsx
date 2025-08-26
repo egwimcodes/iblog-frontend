@@ -1,9 +1,9 @@
 'use client';
+import TextBtn from "@/components/global/TextBtn";
 import Image from "next/image";
 import { useState } from "react";
 import { FaRegComment } from "react-icons/fa6";
 import { HiOutlineHandThumbUp } from "react-icons/hi2";
-import TextBtn from "./TextBtn";
 
 export default function SavedDraftMyArticles() {
     const [selected, setSelected] = useState('Saved');
@@ -35,7 +35,7 @@ export default function SavedDraftMyArticles() {
             {/* Articles Saved List */}
             {selected === 'Saved' && (<div className="saved space-y-4 w-full">
                 {[1, 2, 3].map((_, i) => (<div key={i}>
-                    <div  className="flex gap-4">
+                    <div className="flex gap-4">
                         {/* Article Image */}
                         <div className="flex-shrink-0 w-20 h-20 md:w-24 md:h-24 relative rounded-md overflow-hidden">
                             <Image
@@ -180,7 +180,7 @@ export default function SavedDraftMyArticles() {
                             <div className="mt-2 flex items-center justify-between">
                                 <div className="w-full flex items-center justify-between gap-4">
                                     <div className="flex items-center gap-4">
-                                        
+
                                         <button className="flex items-center gap-1 text-gray-500 dark:text-gray-400 hover:text-pink-500">
                                             <HiOutlineHandThumbUp className="w-4 h-4" />
                                             <span className="text-xs">90k</span>
@@ -194,8 +194,8 @@ export default function SavedDraftMyArticles() {
                                         <TextBtn label="edit" className="text-xs" />
                                         <TextBtn label="draft" className="text-xs" />
                                         <TextBtn label="remove" className="text-xs " />
-</div>
-                                   
+                                    </div>
+
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
-import OutlineBtn from "./OutlineBtn";
-import TextBtn from "./TextBtn";
+import OutlineBtn from "@/components/global/OutlineBtn";
+import TextBtn from "@/components/global/TextBtn";
 
 export default function SuggestedTopics() {
     const topics = ["Tech", "AI", "Design", "Startups", "Productivity", "Self Growth", "Web3", "Money", "Success", "Writing"];

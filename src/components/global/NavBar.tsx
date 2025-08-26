@@ -1,6 +1,6 @@
 'use client'
 import Image from "next/image";
-import SearchBar from "./SearchBar";
+import SearchBar from "../(main)/articles/SearchBar";
 import OutlineBtn from "./OutlineBtn";
 import TextBtn from "./TextBtn";
 import Link from "next/link";
@@ -8,8 +8,7 @@ import { useRouter } from "next/navigation";
 import { FiEdit, FiUser, FiSettings, FiLogOut } from "react-icons/fi";
 import { GoBell } from "react-icons/go";
 import { useState, useRef } from "react";
-import { useAppDispatch, useAppSelector } from "@/lib/redux/redux-hooks";
-import { clearUser } from "@/lib/redux/slices/accountSlice";
+import { useUser } from "@/lib/redux/store/account/hooks";
 
 // function useOutsideClick(ref: RefObject<HTMLElement>, callback: () => void) {
 //     useEffect(() => {
@@ -30,15 +29,14 @@ export default function NavBar() {
     const menuRef = useRef<HTMLDivElement>(null);
     const modalRef = useRef<HTMLDivElement>(null);
     const router = useRouter();
-    const dispatch = useAppDispatch()
-    const {isAuthenticated }= useAppSelector((state) => state.user);
+    const { isAuthenticated, logout } = useUser();
 
 
     const handleLogout = () => {
         // Show confirmation modal instead of immediate logout
         setShowLogoutModal(true);
         setMenuOpen(false);
-        dispatch(clearUser());
+        logout();
 
     };
 

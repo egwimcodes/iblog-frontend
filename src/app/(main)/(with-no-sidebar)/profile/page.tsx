@@ -1,11 +1,14 @@
+"use client"
 import { FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { FiEdit, FiInstagram } from "react-icons/fi";
 import { SlSocialFacebook } from "react-icons/sl";
 import { TbPoint } from "react-icons/tb";
 import Image from "next/image";
-import SavedDraftMyArticles from "@/components/ui/SavedDraftMyArticles";
+import SavedDraftMyArticles from "@/components/(main)/profile/SavedDraftMyArticles";
+import { useUser } from "@/lib/redux/store/account/hooks";
 
 export default function ProfilePage() {
+    const { profile } = useUser();
     return (
         <>
             <div className="search-topics w-[90dvw] md:w-[50dvw] flex flex-col space-y-2 mx-auto">
@@ -43,7 +46,7 @@ export default function ProfilePage() {
 
                 {/* User Info */}
                 <div className="w-full flex flex-col items-center  space-y-2 text-center">
-                    <h2 className="text-base font-semibold font-poppins">Ana Belly</h2>
+                    <h2 className="text-base font-semibold font-poppins">{profile?.first_name} {profile?.last_name }</h2>
                     <h3 className="text-sm text-gray-500 dark:text-gray-400 font-poppins truncate">
                         Financial business expert
                     </h3>

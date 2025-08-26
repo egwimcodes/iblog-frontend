@@ -2,7 +2,7 @@
 import { useState, Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { X } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/global/Button";
 
 type ResetPasswordModalProps = {
     isOpen: boolean;
@@ -114,8 +114,8 @@ export function ResetPasswordModal({
                                 {message && (
                                     <div
                                         className={`mb-4 p-3 rounded-md ${message.type === "success"
-                                                ? "bg-green-500/10 text-green-600 dark:text-green-400"
-                                                : "bg-red-500/10 text-red-600 dark:text-red-400"
+                                            ? "bg-green-500/10 text-green-600 dark:text-green-400"
+                                            : "bg-red-500/10 text-red-600 dark:text-red-400"
                                             }`}
                                     >
                                         {message.text}

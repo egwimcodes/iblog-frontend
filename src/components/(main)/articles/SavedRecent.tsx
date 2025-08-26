@@ -1,8 +1,8 @@
 'use client'
+import SavedRecentSkeleton from "@/components/components-skeletons/SavedRecentSkeleton";
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { FaBookmark, FaClock } from "react-icons/fa";
-import SavedRecentSkeleton from "../skeletons/SavedRecentSkeleton";
 
 export default function SavedRecent() {
     const [selected, setSelected] = useState('Saved');
