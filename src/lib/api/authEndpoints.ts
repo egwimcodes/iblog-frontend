@@ -1,5 +1,5 @@
 export const Routes = Object.freeze({
-  FINALIZE_GOOGLE_LOGIN: "/api/auth/google/finalize_google_login/",
+  FINALIZE_GOOGLE_LOGIN: "/api/auth/google_login/",
   // REFRESH_AUTH_TOKENS: "/api/auth/refresh_token/",
   // BUSINESS: "/api/business/",
   // UPDATE_ACCOUNT: "/api/auth/me/",
