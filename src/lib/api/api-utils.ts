@@ -4,9 +4,9 @@ import { ApiRequestConfig } from "@/lib/types/services";
 import { retrieveAccessToken } from "@/lib/utils/security";
 import Axios from "axios";
 
-const BACKEND_URL = process.env.PRODCUTION
-  ? process.env.PRODCUTION_SERVER_URL!
-  : process.env.DEVELOPMENT_SERVER_URL!;
+const BACKEND_URL = process.env.NEXT_PUBLIC_PRODUCTION === 'true'
+  ? process.env.NEXT_PUBLIC_PRODUCTION_SERVER_URL!
+  : process.env.NEXT_PUBLIC_DEVELOPMENT_SERVER_URL!;
 
 export const MakeRequest = async (
   requestObj: ApiRequestConfig,

@@ -20,7 +20,7 @@ export default function GooglePopup() {
             );
         }
 
-        setTimeout(() => window.close(), 4500);
+        setTimeout(() => window.close(), 3500);
     }, []);
 
     // Data items being transferred - responsive sizes

@@ -25,9 +25,8 @@ export default function GoogleLoginButton() {
                 dispatch(hideLoader());
                 return;
             }
-
+            // alert(`✅Token: ${id_token}`);
             if (id_token) {
-                // console.log("✅ Token:", id_token);
                 try {
                     const res = await FinalizeGoogleLogin({ token: id_token });
                     // console.log("✅ FinalizeGoogleLogin:", res);
@@ -60,9 +59,9 @@ export default function GoogleLoginButton() {
         dispatch(showLoader());
 
         const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!;
-        const redirectUri = `${window.location.origin}/google-popup/`;
+        const redirectUri = process.env.NEXT_PUBLIC_PRODUCTION === "true" ? `${process.env.NEXT_PUBLIC_GOOGLE_PRODUCTION_REDIRECT_URI!}` : `${process.env.NEXT_PUBLIC_GOOGLE_DEVELOPMENT_REDIRECT_URI}`;
         const nonce = crypto.randomUUID();
-
+    
         const authUrl =
             "https://accounts.google.com/o/oauth2/v2/auth?" +
             new URLSearchParams({
