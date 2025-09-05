@@ -25,7 +25,7 @@ export default function GoogleLoginButton() {
                 dispatch(hideLoader());
                 return;
             }
-            // alert(`✅Token: ${id_token}`);
+            alert(`✅Token: ${id_token}`);
             if (id_token) {
                 try {
                     const res = await FinalizeGoogleLogin({ token: id_token });
