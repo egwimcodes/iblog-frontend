@@ -29,7 +29,7 @@ export default function GoogleLoginButton() {
             if (id_token) {
                 try {
                     const res = await FinalizeGoogleLogin({ token: id_token });
-                    // console.log("✅ FinalizeGoogleLogin:", res);
+                    console.log("✅ FinalizeGoogleLogin:", res);
                     dispatch(
                         setUser({
                             profile: res.user,
