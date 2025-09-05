@@ -29,7 +29,7 @@ export default function GoogleLoginButton() {
             if (id_token) {
                 try {
                     const res = await FinalizeGoogleLogin({ token: id_token });
-                    alert(`✅Token uptain: ${res}`);
+                    console.log(`✅Response uptain: ${res}`);
                     dispatch(
                         setUser({
                             profile: res.user,
