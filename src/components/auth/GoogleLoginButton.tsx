@@ -17,7 +17,8 @@ export default function GoogleLoginButton() {
     const listener = useCallback(
         async (event: MessageEvent) => {
 
-            const BACKEND_URL = process.env.NEXT_PUBLIC_PRODUCTION === 'true'
+            const BACKEND_URL =
+                process.env.NODE_ENV === "production"
                 ? process.env.NEXT_PUBLIC_PRODUCTION_SERVER_URL!
                 : process.env.NEXT_PUBLIC_DEVELOPMENT_SERVER_URL!;
             
@@ -66,7 +67,7 @@ export default function GoogleLoginButton() {
         dispatch(showLoader());
 
         const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!;
-        const redirectUri = process.env.NEXT_PUBLIC_PRODUCTION === "true" ? `${process.env.NEXT_PUBLIC_GOOGLE_PRODUCTION_REDIRECT_URI!}` : `${process.env.NEXT_PUBLIC_GOOGLE_DEVELOPMENT_REDIRECT_URI}`;
+        const redirectUri = process.env.NODE_ENV === "production" ? `${process.env.NEXT_PUBLIC_GOOGLE_PRODUCTION_REDIRECT_URI!}` : `${process.env.NEXT_PUBLIC_GOOGLE_DEVELOPMENT_REDIRECT_URI}`;
         const nonce = crypto.randomUUID();
     
         const authUrl =

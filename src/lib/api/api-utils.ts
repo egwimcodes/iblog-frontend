@@ -4,9 +4,11 @@ import { ApiRequestConfig } from "@/lib/types/services";
 import { retrieveAccessToken } from "@/lib/utils/security";
 import Axios from "axios";
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_PRODUCTION === 'true'
-  ? process.env.NEXT_PUBLIC_PRODUCTION_SERVER_URL!
-  : process.env.NEXT_PUBLIC_DEVELOPMENT_SERVER_URL!;
+const BACKEND_URL =
+  process.env.NODE_ENV === "production"
+    ? process.env.NEXT_PUBLIC_PRODUCTION_SERVER_URL!
+    : process.env.NEXT_PUBLIC_DEVELOPMENT_SERVER_URL!;
+
 
 export const MakeRequest = async (
   requestObj: ApiRequestConfig,
@@ -38,7 +40,7 @@ export const MakeRequest = async (
       data,
       ...config,
     });
-
+    console.log("Axios Response", response);
     return response.data;
   } catch (err) {
     if (Axios.isAxiosError(err)) {

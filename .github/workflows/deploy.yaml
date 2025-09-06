@@ -26,7 +26,6 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no -p ${{ secrets.VPS_PORT }} ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << 'EOF'
             cat > ~/dockerlized-apps/react-next-app/iblog-frontend/.env <<EOL
-            NEXT_PUBLIC_PRODUCTION=${{ secrets.NEXT_PUBLIC_PRODUCTION }}
             NEXT_PUBLIC_PRODUCTION_SERVER_URL=${{ secrets.NEXT_PUBLIC_PRODUCTION_SERVER_URL }}
             NEXT_PUBLIC_GOOGLE_PRODUCTION_REDIRECT_URI=${{ secrets.NEXT_PUBLIC_GOOGLE_PRODUCTION_REDIRECT_URI }}
             NEXT_PUBLIC_GOOGLE_CLIENT_ID=${{ secrets.NEXT_PUBLIC_GOOGLE_CLIENT_ID }}
