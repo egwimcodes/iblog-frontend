@@ -11,6 +11,7 @@ services:
       - .env
     environment:
       - NODE_ENV=production
+      - TZ=Africa/Lagos
     networks:
       - iblog_network
 
