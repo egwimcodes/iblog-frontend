@@ -40,7 +40,7 @@ export const MakeRequest = async (
       data,
       ...config,
     });
-    console.log("Axios Response", response);
+    console.log(`Axios Response ${response}`);
     return response.data;
   } catch (err) {
     if (Axios.isAxiosError(err)) {
