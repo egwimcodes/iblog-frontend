@@ -16,9 +16,7 @@ export async function FinalizeGoogleLogin({
         token,
       },
     };
-    console.log("REQUEST CONFIG", requestConfig);
     const response = await MakeRequest(requestConfig);
-    console.log("RESPONSE", JSON.stringify(response));
     return response;
   } catch (error) {
     throw error;

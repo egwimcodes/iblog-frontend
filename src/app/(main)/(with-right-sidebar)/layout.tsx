@@ -1,6 +1,6 @@
 import SearchBar from '@/components/main/articles/SearchBar';
 import NavBar from '@/components/global/NavBar';
-import RightSideBar from '../@rightSideBar/page';
+import RightSideBar from '../../../components/@rightSideBar/page';
 
 export default function ArticleLayout({
   children,

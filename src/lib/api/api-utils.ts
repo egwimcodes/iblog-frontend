@@ -17,8 +17,6 @@ export const MakeRequest = async (
   const { path, data, method, contentType, removeAuth, url } = requestObj;
 
   try {
-    console.log("🌍 BACKEND_URL at runtime:", BACKEND_URL);
-
     const accessToken = await retrieveAccessToken();
     const token: string | undefined = !removeAuth ? accessToken : undefined;
 
