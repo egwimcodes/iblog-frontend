@@ -17,6 +17,8 @@ export const MakeRequest = async (
   const { path, data, method, contentType, removeAuth, url } = requestObj;
 
   try {
+    console.log("🌍 BACKEND_URL at runtime:", BACKEND_URL);
+
     const accessToken = await retrieveAccessToken();
     const token: string | undefined = !removeAuth ? accessToken : undefined;
 
@@ -40,9 +42,13 @@ export const MakeRequest = async (
       data,
       ...config,
     });
-    console.log("REQUEST CONFIG data:", JSON.stringify(data));
+   console.log("AXIOS FULL RESPONSE", {
+     status: response.status,
+     statusText: response.statusText,
+     data: response.data,
+     headers: response.headers,
+   });
 
-    console.log(`Axios Response ${response}`);
     return response.data;
   } catch (err) {
     if (Axios.isAxiosError(err)) {
