@@ -26,11 +26,9 @@ export default function GoogleLoginButton() {
                 dispatch(hideLoader());
                 return;
             }
-            console.log("✅ FinalizeGoogleLogin:", id_token);
             if (id_token) {
                 try {
                     const res = await FinalizeGoogleLogin({ token: id_token });
-                    console.log(`✅Response uptain: ${res}`);
                     dispatch(
                         setUser({
                             profile: res.user,
@@ -61,7 +59,7 @@ export default function GoogleLoginButton() {
 
         const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!;
         const redirectUri = process.env.NODE_ENV === "production" ? `${process.env.NEXT_PUBLIC_GOOGLE_PRODUCTION_REDIRECT_URI!}` : `${process.env.NEXT_PUBLIC_GOOGLE_DEVELOPMENT_REDIRECT_URI}`;
-        
+
         const nonce = crypto.randomUUID();
     
         const authUrl =

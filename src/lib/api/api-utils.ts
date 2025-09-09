@@ -27,7 +27,7 @@ export const MakeRequest = async (
         ? `Bearer ${token}`
         : undefined,
       Accept: "application/json",
-      "Content-Type": contentType ?? "application/json",
+      "Content-Type": contentType ?? "application/json;charset=UTF-8",
     };
 
     // Always make sure path ends with slash (/)
