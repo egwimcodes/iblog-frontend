@@ -27,7 +27,7 @@ export const MakeRequest = async (
         ? `Bearer ${token}`
         : undefined,
       Accept: "application/json",
-      "Content-Type": contentType ?? "application/json;charset=UTF-8",
+      "Content-Type": contentType ?? "application/json",
     };
 
     // Always make sure path ends with slash (/)
@@ -40,6 +40,8 @@ export const MakeRequest = async (
       data,
       ...config,
     });
+    console.log("REQUEST CONFIG data:", JSON.stringify(data));
+
     console.log(`Axios Response ${response}`);
     return response.data;
   } catch (err) {
