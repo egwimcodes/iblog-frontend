@@ -1,12 +1,14 @@
-import { ApiRequestConfig, FinalizeGoogleLoginRequestToken } from "@/lib/types/services";
+import {
+  ApiRequestConfig,
+  FinalizeGoogleLoginRequestToken,
+} from "@/lib/types/services";
 import { Routes } from "./authEndpoints";
-import { FinalizeGoogleLoginType } from "@/lib/types/account";
+import { AuthResponseType, LoginRequest, RegisterRequest } from "@/lib/types/account";
 import { MakeRequest } from "./api-utils";
-
 
 export async function FinalizeGoogleLogin({
   token,
-}: FinalizeGoogleLoginRequestToken): Promise<FinalizeGoogleLoginType> {
+}: FinalizeGoogleLoginRequestToken): Promise<AuthResponseType> {
   try {
     const requestConfig: ApiRequestConfig = {
       path: Routes.FINALIZE_GOOGLE_LOGIN,
@@ -24,25 +26,35 @@ export async function FinalizeGoogleLogin({
 }
 
 
-// fetch("/api/auth/google", {
-//                     method: "POST",
-//                     headers: { "Content-Type": "application/json" },
-//                     body: JSON.stringify({ token: id_token }),
-//                 })
-//                     .then((res) => {
-//                         if (!res.ok) throw new Error("Login failed");
-//                         return res.json();
-//                     })
-//                     .then((userData) => {
-//                         console.log("User Data:", userData);
-//                         toast.success("Signed in with Google");
-//                         window.location.href = "/articles";
-//                     })
-//                     .catch((err) => {
-//                         console.error(err);
-//                         toast.error("Login failed");
-//                     })
-//                     .finally(() => {
-//                         dispatch(hideLoader());
-//                         window.removeEventListener("message", listener);
-//                     });
+export async function Login({data}: LoginRequest): Promise<AuthResponseType> {
+  try {
+    const requestConfig: ApiRequestConfig = {
+      path: Routes.LOGIN,
+      method: "POST",
+      removeAuth: true,
+      data: data
+    };
+    const response = await MakeRequest(requestConfig);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
+
+
+export async function Register({ data }: RegisterRequest): Promise<AuthResponseType> {
+  try {
+    const requestConfig: ApiRequestConfig = {
+      path: Routes.REGISTER,
+      method: "POST",
+      removeAuth: true,
+      data: data,
+    };
+    const response = await MakeRequest(requestConfig);
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
+
+

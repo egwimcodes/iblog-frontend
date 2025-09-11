@@ -8,10 +8,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "www.google.com",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
   },
   compiler: {
-    removeConsole: false, 
+    removeConsole: false,
   },
 };
 

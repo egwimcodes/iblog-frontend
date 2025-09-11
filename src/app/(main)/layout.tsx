@@ -54,8 +54,8 @@ export default function MainLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <
-            >
+        <>
+            {children}
 
             <div className="relative min-h-screen w-full overflow-hidden ">
                 <main className=" mb-10">
@@ -64,7 +64,6 @@ export default function MainLayout({
                 <Footer />
                 <BackgroundBeams />
             </div>
-
         </>
     );
 }

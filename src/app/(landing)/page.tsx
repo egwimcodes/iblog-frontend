@@ -25,6 +25,8 @@ export default function Home() {
             window.close();
         }
     }, []);
+
+    
     return (
         <>
             <main className="relative min-h-screen w-full bg-background text-foreground overflow-hidden">

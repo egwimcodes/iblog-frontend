@@ -1,20 +1,34 @@
 'use client'
 
-import { useTheme } from 'next-themes'
+import { useTheme } from '@/lib/contexts';
 import { useEffect, useState } from 'react'
 
 export default function ThemeToggleButton() {
-  const { resolvedTheme, setTheme } = useTheme()
+  const { state, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
+  // Debug logging
+  useEffect(() => {
+    console.log('Current theme:', state.theme);
+    console.log('Resolved theme:', state.resolvedTheme);
+  }, [state.theme, state.resolvedTheme]);
+
+  // Apply theme to document
+  useEffect(() => {
+    const root = window.document.documentElement;
+    root.classList.remove('light', 'dark');
+    root.classList.add(state.resolvedTheme);
+    //Save to localStorage
+    localStorage.setItem('theme', state.theme);
+  }, [state.resolvedTheme, state.theme]); 
+
   if (!mounted) return null
 
-  const isDark = resolvedTheme === 'dark'
-
+  const isDark = state.resolvedTheme === 'dark'
   return (
     <button
       aria-label="Toggle Theme"

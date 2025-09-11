@@ -56,6 +56,7 @@ export const MakeRequest = async (
         err.response?.data?.message || err.response?.statusText || err.message;
 
       console.error("❌ API Error:", {
+        data: data,
         url: err.config?.url,
         method: err.config?.method,
         status,

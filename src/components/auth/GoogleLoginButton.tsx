@@ -1,18 +1,19 @@
 "use client";
 import Image from "next/image";
-import { useAppDispatch } from "@/lib/redux/store/store-hooks";
-import { hideLoader, showLoader } from "@/lib/redux/store/ui/uiSlice";
 import { toast } from "react-toastify";
 import { useCallback, useEffect, useRef } from "react";
 import { FinalizeGoogleLogin } from "@/lib/api/fetch-utils";
-import { setUser } from "@/lib/redux/store/account/slice";
 import { useRouter } from "next/navigation";
+import {useUser } from "@/lib/contexts";
+import { useLoading } from "@/lib/contexts/LoadingContext";
 
 export default function GoogleLoginButton() {
-    const dispatch = useAppDispatch();
+    const { showLoader, hideLoader } = useLoading();
     const popupRef = useRef<Window | null>(null);
     const popupCheckInterval = useRef<NodeJS.Timeout | null>(null);
+    const { login } = useUser();
     const router = useRouter();
+
     // 🎯 Handle messages from popup (success / error)
     const listener = useCallback(
         async (event: MessageEvent) => {
@@ -23,27 +24,22 @@ export default function GoogleLoginButton() {
 
             if (error) {
                 toast.error("Google login cancelled or failed");
-                dispatch(hideLoader());
+                hideLoader();
                 return;
             }
             if (id_token) {
                 try {
                     const res = await FinalizeGoogleLogin({ token: id_token });
-                    dispatch(
-                        setUser({
-                            profile: res.user,
-                            tokens: { access: res.access, refresh: res.refresh },
-                        })
-                    );
+                    login(res);
                     router.push("/articles")
                 } catch (err) {
                     toast.error(`Login failed ${err}`);
                 } finally {
-                    dispatch(hideLoader());
+                    hideLoader();
                 }
             }
         },
-        [dispatch, router]
+        [hideLoader, login, router]
     );
 
     useEffect(() => {
@@ -55,13 +51,13 @@ export default function GoogleLoginButton() {
     }, [listener]);
 
     const startLogin = () => {
-        dispatch(showLoader());
+        showLoader();
 
         const clientId = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!;
         const redirectUri = process.env.NODE_ENV === "production" ? `${process.env.NEXT_PUBLIC_GOOGLE_PRODUCTION_REDIRECT_URI!}` : `${process.env.NEXT_PUBLIC_GOOGLE_DEVELOPMENT_REDIRECT_URI}`;
 
         const nonce = crypto.randomUUID();
-    
+
         const authUrl =
             "https://accounts.google.com/o/oauth2/v2/auth?" +
             new URLSearchParams({
@@ -84,7 +80,7 @@ export default function GoogleLoginButton() {
             if (popupRef.current && popupRef.current.closed) {
                 clearInterval(popupCheckInterval.current!);
                 popupRef.current = null;
-                dispatch(hideLoader());
+                hideLoader();
             }
         }, 500);
     };

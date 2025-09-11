@@ -4,6 +4,11 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Eye, EyeOff, X } from "lucide-react";
 import { Button } from "@/components/global/Button";
 import GoogleLoginButton from "./GoogleLoginButton";
+import { Login, Register } from "@/lib/api/fetch-utils";
+import { useLoading } from "@/lib/contexts/LoadingContext";
+import { toast } from "react-toastify";
+import { useUser } from "@/lib/contexts";
+import { useRouter } from "next/navigation";
 
 
 type AuthModalProps = {
@@ -13,6 +18,8 @@ type AuthModalProps = {
 };
 
 export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalProps) {
+  const { showLoader, hideLoader } = useLoading();
+  const { login } = useUser();
   const [currentView, setCurrentView] = useState(initialView);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,6 +30,7 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
   const [interest, setInterest] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ text: string; type: "success" | "error" } | null>(null);
+  const router = useRouter();
 
 
   const interests = [
@@ -41,13 +49,31 @@ export function AuthModal({ isOpen, onClose, initialView = "login" }: AuthModalP
     setMessage(null);
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
 
       if (currentView === "login") {
-        setMessage({ text: "Login successful!", type: "success" });
-        setTimeout(onClose, 1500);
+        try {
+          showLoader();
+          const res = await Login({ data: { email: email, password: password } });
+          login(res);
+          setMessage({ text: "Login successful!", type: "success" });
+          router.push("/articles")
+        } catch (err) {
+          toast.error(`Login failed ${err}`);
+        } finally {
+          hideLoader();
+        }
       } else if (currentView === "register") {
-        setCurrentView("interests");
+        try {
+          showLoader();
+          const res = await Register({ data: { first_name: name, email: email, password1: password, password2: confirmPassword } });
+          login(res);
+          router.push("/articles")
+        } catch (err) {
+          toast.error(`Account creation failed ${err}`);
+        } finally {
+          hideLoader();
+          // setCurrentView("interests");
+        }
       } else if (currentView === "interests") {
         setCurrentView("confirm-email");
       } else if (currentView === "confirm-email") {

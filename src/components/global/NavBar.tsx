@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { FiEdit, FiUser, FiSettings, FiLogOut } from "react-icons/fi";
 import { GoBell } from "react-icons/go";
 import { useState, useRef } from "react";
-import { useUser } from "@/lib/redux/store/account/hooks";
+import { useUser } from "@/lib/contexts";
 
 // function useOutsideClick(ref: RefObject<HTMLElement>, callback: () => void) {
 //     useEffect(() => {
@@ -29,7 +29,7 @@ export default function NavBar() {
     const menuRef = useRef<HTMLDivElement>(null);
     const modalRef = useRef<HTMLDivElement>(null);
     const router = useRouter();
-    const { isAuthenticated, logout } = useUser();
+    const { state, logout } = useUser();
 
 
     const handleLogout = () => {
@@ -79,7 +79,7 @@ export default function NavBar() {
                     </div>
 
                     {/* Right Side Buttons */}
-                    {isAuthenticated ? (
+                    {state.isAuthenticated ? (
                         <div className="flex items-center space-x-4">
                             <button className="flex items-center" aria-label="Create post" onClick={() => router.push("/editor")}>
                                 <FiEdit className="mx-2 w-5 h-5 text-brand" />

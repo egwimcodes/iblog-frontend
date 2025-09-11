@@ -21,3 +21,4 @@ export type GoogleUserInfoResponse = {
 export interface FinalizeGoogleLoginRequestToken {
   token: string;
 }
+
